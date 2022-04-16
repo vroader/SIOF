@@ -1,0 +1,43 @@
+cd c:/
+mkdir SIOF
+cd SIOF
+python -m venv venv
+cd venv/Scripts
+activate
+cd c:/
+pip install requirements.txt
+django-admin startproject siofproject .
+python manage.py startapp siofapp
+
+EM siofproject/settings.py:
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'siofapp'
+]
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'siof',
+        'USER': 'root',
+        'PASSWORD': 'DataSc1ence',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': 'SET default_storage_engine=InnoDB',
+            }
+    }
+}
+
+EM siofapp/views.py
+from django.http import HttpResponse
+posteriormente crie a função que será exibida no html
+
+EM seguida no prompt de comando
+python manage.py migrate
+python manage.py inspectdb > siofapp/models.py

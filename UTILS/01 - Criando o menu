@@ -1,0 +1,19 @@
+tutorial do youtube Criando meny lateral
+disponível em https://www.youtube.com/watch?v=Fgdjvclw_bM
+
+Criar um index html
+criar uma lista não ordenada ul
+Criar os itens de lista li
+criar a pasta static
+criar a pasta css
+criar o arquivo stile.css
+em settings.py importar os
+em settings.py colar
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+No prompt de comando executar
+    python manage.py collectstatic
+no style.css criar inportar fontes no google fontes
+no Style.css installar o ionicons
+Buscar os icones no ionicons e colar no span class="icon"
