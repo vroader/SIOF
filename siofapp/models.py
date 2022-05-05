@@ -277,9 +277,8 @@ class TblFcdfplanointernoorcamento(models.Model):
     id_fcdfplanointerno = models.AutoField(db_column='Id_FCDFPlanoInterno', primary_key=True)  # Field name made lowercase.
     pif_cadastrodemanda = models.ForeignKey(TblCadastrodemandas, models.DO_NOTHING, db_column='pif_CadastroDemanda')  # Field name made lowercase.
     pif_justificativa = models.CharField(db_column='pif_Justificativa', max_length=255, blank=True, null=True)  # Field name made lowercase.
-    pif_unidadeorcamentaria = models.CharField(db_column='pif_UnidadeOrcamentaria', max_length=6, blank=True, null=True)  # Field name made lowercase.
     pif_fonte = models.CharField(db_column='pif_Fonte', max_length=3, blank=True, null=True)  # Field name made lowercase.
-    pif_programatrabalho = models.CharField(db_column='pif_ProgramaTrabalho', max_length=17, blank=True, null=True)  # Field name made lowercase.
+    pif_programatrabalho = models.CharField(db_column='pif_ProgramaTrabalho', max_length=21, blank=True, null=True)  # Field name made lowercase.
     pif_quantidade = models.IntegerField(db_column='pif_Quantidade', blank=True, null=True)  # Field name made lowercase.
     pif_valor = models.DecimalField(db_column='pif_Valor', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
     pif_exercicio = models.TextField(db_column='pif_Exercicio', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
@@ -308,23 +307,22 @@ class TblFcdfproposta(models.Model):
 
 class TblFcdfquadrodetalhamentodespesa(models.Model):
     id_gdfquadrodetalhamentodespesa = models.AutoField(db_column='id_GDFQuadroDetalhamentoDespesa', primary_key=True)  # Field name made lowercase.
-    qdf_exerciciofinanceiro = models.TextField(db_column='qdf_ExercicioFinanceiro', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-    qdf_unidadeorcamentaria = models.IntegerField(db_column='qdf_UnidadeOrcamentaria', blank=True, null=True)  # Field name made lowercase.
-    qdf_mesreferencia = models.CharField(db_column='qdf_MesReferencia', max_length=11, db_collation='latin1_swedish_ci', blank=True, null=True)  # Field name made lowercase.
     qdf_dataemissao = models.DateField(db_column='qdf_DataEmissao', blank=True, null=True)  # Field name made lowercase.
-    qdf_esfera = models.IntegerField(db_column='qdf_Esfera', blank=True, null=True)  # Field name made lowercase.
-    qdf_naturezadespesa = models.IntegerField(db_column='qdf_NaturezaDespesa', blank=True, null=True)  # Field name made lowercase.
-    qdf_fonte = models.IntegerField(db_column='qdf_Fonte', blank=True, null=True)  # Field name made lowercase.
-    qdf_programatrabalho = models.CharField(db_column='qdf_ProgramaTrabalho', max_length=17, blank=True, null=True)  # Field name made lowercase.
+    qdf_exerciciofinanceiro = models.TextField(db_column='qdf_ExercicioFinanceiro', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    qdf_funcao = models.CharField(db_column='qdf_Funcao', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    qdf_subfuncao = models.CharField(db_column='qdf_Subfuncao', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    qdf_programa = models.CharField(db_column='qdf_Programa', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    qdf_acao = models.CharField(db_column='qdf_Acao', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    qdf_subtitulo = models.CharField(db_column='qdf_Subtitulo', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    qdf_planoorcamentario = models.CharField(db_column='qdf_PlanoOrcamentario', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    qdf_fonte = models.CharField(db_column='qdf_Fonte', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    qdf_naturezadespesa = models.CharField(db_column='qdf_NaturezaDespesa', max_length=150, blank=True, null=True)  # Field name made lowercase.
     qdf_lei = models.DecimalField(db_column='qdf_Lei', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
-    qdf_alteracao = models.DecimalField(db_column='qdf_Alteracao', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
-    qdf_contingenciado = models.DecimalField(db_column='qdf_Contingenciado', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
-    qdf_cota = models.DecimalField(db_column='qdf_Cota', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
-    qdg_bloqueado = models.DecimalField(db_column='qdg_Bloqueado', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
-    qdf_despesaautorizada = models.DecimalField(db_column='qdf_DespesaAutorizada', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
+    qdf_dotacaoinicial = models.DecimalField(db_column='qdf_DotacaoInicial', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
+    qdf_dotacaoatual = models.DecimalField(db_column='qdf_DotacaoAtual', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
     qdf_empenhado = models.DecimalField(db_column='qdf_Empenhado', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
-    qdf_disponivel = models.DecimalField(db_column='qdf_Disponivel', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
     qdf_liquidado = models.DecimalField(db_column='qdf_Liquidado', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
+    qdf_pago = models.DecimalField(db_column='qdf_Pago', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -535,6 +533,28 @@ class TblPeriodicidade(models.Model):
         db_table = 'tbl_periodicidade'
 
 
+class TblPlanointernoorcamento(models.Model):
+    id_fcdfplanointerno = models.BigIntegerField(db_column='Id_FCDFPlanoInterno', blank=True, null=True)  # Field name made lowercase.
+    pif_cadastrodemandas = models.BigIntegerField(db_column='pif_CadastroDemandas', blank=True, null=True)  # Field name made lowercase.
+    pif_justificativa = models.TextField(db_column='pif_Justificativa', blank=True, null=True)  # Field name made lowercase.
+    pif_iniciativaestrategica = models.FloatField(db_column='pif_IniciativaEstrategica', blank=True, null=True)  # Field name made lowercase.
+    pif_fonte = models.TextField(db_column='pif_Fonte', blank=True, null=True)  # Field name made lowercase.
+    pif_funcao = models.TextField(db_column='pif_Funcao', blank=True, null=True)  # Field name made lowercase.
+    pif_subfuncao = models.TextField(db_column='pif_Subfuncao', blank=True, null=True)  # Field name made lowercase.
+    pif_programa = models.TextField(db_column='pif_Programa', blank=True, null=True)  # Field name made lowercase.
+    pif_acao = models.TextField(db_column='pif_Acao', blank=True, null=True)  # Field name made lowercase.
+    pif_subtitulo = models.TextField(db_column='pif_Subtitulo', blank=True, null=True)  # Field name made lowercase.
+    pif_quantidade = models.BigIntegerField(db_column='pif_Quantidade', blank=True, null=True)  # Field name made lowercase.
+    pif_valor = models.FloatField(db_column='pif_Valor', blank=True, null=True)  # Field name made lowercase.
+    pif_exercicio = models.BigIntegerField(db_column='pif_Exercicio', blank=True, null=True)  # Field name made lowercase.
+    pif_observacao = models.TextField(db_column='pif_Observacao', blank=True, null=True)  # Field name made lowercase.
+    pif_data = models.DateTimeField(db_column='pif_Data', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'tbl_planointernoorcamento'
+
+
 class TblPrevisaofaseexecucao(models.Model):
     id_previsaofaseexecucao = models.IntegerField(db_column='Id_PrevisaoFaseExecucao', primary_key=True)  # Field name made lowercase.
     fse_fase = models.CharField(db_column='fse_Fase', max_length=45, blank=True, null=True)  # Field name made lowercase.
@@ -582,3 +602,23 @@ class TblPropostasetorial(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_propostasetorial'
+
+class viw_qddfcdf2(models.Model):
+    id = models.BigIntegerField(primary_key=True)
+    Emissao = models.DateField(db_column='Emissão')
+    Ano = models.TextField(db_column='Ano')
+    Ordenador= models.CharField(db_column='Ordenador de Despesa', max_length=36, blank=True, null=True)
+    Programa= models.CharField(db_column='Programa de Trabalho', max_length=21, blank=True, null=True)
+    Plano = models.CharField(db_column='Plano Orcamentário', max_length=144, blank=True, null=True)
+    Fonte = models.CharField (db_column='Fonte', max_length=3, blank=True, null=True)
+    Grupo = models.CharField(db_column='Grupo de Despesa', max_length=25, blank=True, null=True)
+    Lei = models.DecimalField(db_column='Lei', max_digits=37, decimal_places=2, blank=True, null=True)
+    DotacaoInicial =models.DecimalField(db_column='Dotação Inicial', max_digits=38, decimal_places=2, blank=True, null=True)
+    DotacaoAtual = models.DecimalField(db_column='Dotação Atual', max_digits=38, decimal_places=2, blank=True, null=True)
+    Empenhado = models.DecimalField(db_column='Empenhado', max_digits=37, decimal_places=2, blank=True, null=True)
+    Liquidado = models.DecimalField(db_column='Liquidado', max_digits=37, decimal_places=2, blank=True, null=True)
+    Pago = models.DecimalField(db_column='Pago', max_digits=37, decimal_places=2, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'viw_qddfcdf2'

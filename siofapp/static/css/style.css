@@ -29,15 +29,15 @@ body{
     top: 0px;
     margin: 0 auto;
     position: relative;
-}
+ }
 .navigation{
     position: relative;
-    display: block;
+    display: inline-block;
     left: 0px;
     height: 500px;
     background-color: #4583c3;
     width: 70px;
-    box-shadow: 10px 0 0 #000066;
+    /*box-shadow: 10px 0 0 #000066;*/
     border-left: 10px solid #4583c3;
     overflow-x: hidden;
     transition: 0.5s;

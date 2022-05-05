@@ -1,0 +1,26 @@
+cso_Codigo,cso_Nome,cso_AreaTematica,cso_DataInclusao,cso_Status,cso_InstrumentoLegal,cso_OrdenadorDespesa
+CCS,"Centro de Comunicação Social","Comunicação Social",0000-00-00,1,"Portaria PMDF nº 783/2012",DLF
+CI,"Centro de Inteligência",Inteligência,2021-04-14,1,"Portaria PMDF nº 1171/2021",DLF
+CMAN,"Centro de Manutenção","Não está ativo.",0000-00-00,0,"Portaria PMDF nº 783/2012",DLF
+CME,"Comando de Missões Especiais","Material e Equipamento Operacional Específico",0000-00-00,0,"Portaria PMDF nº 783/2012",DLF
+CMV,"Centro de Medicina Veterinária","Não está ativo.",0000-00-00,0,"Portaria PMDF nº 783/2012",DSAP
+CPP,"Centro de Políticas Públicas","Projetos de interesse social e polícia Comiunitária",0000-00-00,0,"Portaria PMDF nº 783/2012",DLF
+DAO,"Diretoria de Assistência Odontológica","Bens e Serviços na Área Odontológica",2020-12-04,1,"Portaria PMDF nº 1147/2020",DSAP
+DCC,"Departamento de Correição e Controle
+Controle","Materiais e Equipamentos de Uso Correicional e Perícia",0000-00-00,1,"Portaria PMDF nº1061/2017",DLF
+DEC,"Departamento de Educação e Cultura","Ensino e Pesquisa",2020-12-04,1,"Portaria PMDF nº 1147/2020",DLF
+DEEC,"Diretoria de Especialização e Educação Continuada","Ensino e pesquisa",0000-00-00,0,"Portaria PMDF nº 783/2012",DLF
+DiCC,"Diretoria de Controle Contábil","Material de consumo e Contratação de Serviços",0000-00-00,0,"Portaria PMDF nº 783/2012",DLF
+DINFRA,"Diretoria de Infraestrutura","Obras e Manutenção Predial e Serviços Gerais",2020-12-04,1,"Portaria PMDF nº 1147/2020",DLF
+DIPC,"Diretoria de Inativos, Pensionistas e Civis","Pessoal Inativo e Pensionistas",0000-00-00,0,"Portaria PMDF nº 783/2012",DLF
+DIPRO,"Diretoria de Projetos","Obras, Manutenção Predial e Serviços Gerais",0000-00-00,0,"Portaria PMDF nº 783/2012",DLF
+DITEL,"Diretoria de Telemática","Comunicação e Tecnologia da Informação",0000-00-00,1,"Portaria PMDF nº 783/2012",DLF
+DOP,"Departamento Operacional","Material e Equipamento Operacional Especial",2020-12-04,1,"Portaria PMDF nº 1147/2020",DLF
+DPGC,"Diretoria de Planejamento e Gestão de Contratos","Saúde e Assistência ao Pessoal",0000-00-00,1,"Portaria PMDF nº 783/2012",DSAP
+DPMT,"Diretoria de Patrimônio, Manutenção e Transportes","Material Bélico e Motomecanização",0000-00-00,0,"Portaria PMDF nº 783/2012",DLF
+DPP,"Diretoria de Pagamento de Pessoal","Pessoal Ativo, Inativo, Custeio da Folha e Benefícios",2020-12-04,1,"Portaria PMDF nº 1147/2020",DGP
+DPPHC,"Diretoria de Pesquisa e Patrimônio Historico e Cultural","Ensino e Pesquisa",0000-00-00,0,"Portaria PMDF nº 1059/2017",DLF
+DPPP,"Diretoria de Pagamento de Pessoal e Previdência","Pessoal Ativo",0000-00-00,0,"Portaria PMDF nº 783/2012",DGP
+DPTS,"Diretoria de Patrimonio, Transporte e Surprimento","Materiais, Equipamentos e Serviços de Uso Comum",2020-12-04,1,"Portaria PMDF nº 1147/2020",DLF
+"Não Defi",,"Demanda sem área Temática Definido",0000-00-00,0,,NULL
+"Não Iden",,"Não é possível identificar a área temática por meio da nota de empenho.",0000-00-00,0,,NULL

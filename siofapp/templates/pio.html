@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+{% load l10n %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sistema de Orçamento e Finanças </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tableStyle.css' %}">
+</style>
+</head>
+<body>
+    <div class="cabecalho">
+        <h1 class="logo">
+          <img src= "{% static 'img/IntranetPMDF.gif' %}" alt = "Intranet PMDF">
+        </h1>
+    </div>
+    <div class = "conteiner">
+    <div class="navigation">
+       <ul>
+            <li class="list active">
+                <a href="#">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">HOME</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon"><ion-icon name="card-outline"></ion-icon></span>
+                    <span class="title">PIO</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon"><ion-icon name="list-outline"></ion-icon></span>
+                    <span class="title">CONTAS</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon"><ion-icon name="shuffle-outline"></ion-icon></span>
+                    <span class="title">REMANEJAMENTOS</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+                    <span class="title">ACOMPANHAMENTO</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="auxTable">
+        <table>
+          <thead >
+            <tr>
+              <th>Código:</th>
+              <th>Demanda:</th>
+              <th>Natureza da Despesa:</th>
+              <th>Quantidade:</th>
+              <th>Valor:</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for dbs in db %}
+            <tr>
+              <td> {{dbs.id_fcdfplanointerno}}</td>
+              <td> {{registro.cad_descricao}}</td>
+              <!--<td> {{dbs.TblCadastrodemandas.cad_fcdfdespesadetalhada}}</td>
+              <td> {{dbs.TblFcdfplanointernoorcamento.pif_quantidade}}</td>-->
+              <td align="right"> {{dbs.pif_valor | floatformat:2}}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+        list.forEach((item) =>
+        item.classList.remove('active'));
+        this.classList.add('active');
+    }
+        list.forEach((item) =>
+        item.addEventListener('click', activeLink));
+</script>
+</body>
+</html>

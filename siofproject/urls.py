@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from siofapp.views import home
+from siofapp.views import home, vpio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
+    path('pio', vpio),
 ]

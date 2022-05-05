@@ -1,0 +1,385 @@
+Id_CadastroDemandas,cad_CodigoDemanda,cad_CoordenadorSetorial,cad_Descricao,cad_FCDFDespesaDetalhada,cad_GDFDespesaDetalhada,cad_ProdutoUnidade,cad_Periodicidade,cad_EspecieDisponibilidade,cad_Observacao,cad_DataInclusao,cad_Status,cad_EspecieDespesa
+1,174,CCS,"Aquisição de medalhas",33903105,33903105,0,1,5,NULL,NULL,1,NULL
+2,181,DOP,"Taxas Anac",33904710,NULL,0,1,1,NULL,NULL,1,NULL
+3,182,DOP,"Combustíveis e Lubrificantes de Aviação",33903002,NULL,0,1,1,NULL,NULL,1,NULL
+4,183,DOP,"Seguro das Aeronaves",33903969,NULL,0,1,1,NULL,NULL,1,NULL
+5,184,DOP,"Alimentos para Animais",33903006,NULL,0,1,1,NULL,NULL,1,"ração equina, feno de alfafa, sal mineral, ração canina "
+6,185,DOP,"Material de Coudelaria e Uso Zootécnico",33903012,33903012,0,1,1,NULL,NULL,1,"Material para ferrageamento, alforge, barrigueira, cilhão, freio, cabeçada, estribo, material para casqueamento, loro, manta, peitoral, porta bastão, protetor de rim e cernelha, varas de salto, rédeas, porta espada, caneleira e boleteira, cabrestos, buçal, guia, chicote de guia, ganchos, serragem, exoesqueleto, bota de montaria, coletes de proteção, cavalete de salto, apito, bola com corda, colar, canicross, capacete para figurantes, colete de condutor canino,hidden suit, jambier, guia carabineira, luva de proteção, macacão de nylon, manguim em juta, mordedor, tala de fibra jockey, osso bovino, preitoral para proteção e faro, petisqueira, refil para chicote, sapato canino, bite pillow, colar enforcador, brinquedo tipo Kong, colar enforcador, coleira de combate, mordente. "
+7,186,DOP,"Suprimento de Aviação",33903032,NULL,0,1,1,NULL,NULL,1,NULL
+8,187,DOP,"Serviços em itens reparáveis de aviação",33903985,NULL,0,1,1,NULL,NULL,1,NULL
+9,188,DOP,"Serviço de Laboratório e Diagnóstico Veterinário",33903950,NULL,0,1,1,NULL,NULL,1,NULL
+10,189,DOP,"Quilogramas de lastros 1kg",33903013,NULL,0,0,5,NULL,NULL,0,NULL
+11,190,DOP,"Quilogramas de lastros 2kg",33903013,NULL,0,0,5,NULL,NULL,0,NULL
+12,191,DOP,"Pares de nadadeiras de calcanhar aberto",33903013,NULL,0,0,5,NULL,NULL,0,NULL
+13,192,DOP,"Pares de luvas para mergulho autônomo",33903013,NULL,0,0,5,NULL,NULL,0,NULL
+14,193,DOP,"Mochilas grandes para material de mergulho",33903013,NULL,0,0,5,NULL,NULL,0,NULL
+15,194,DOP,"Carretilhas feitas em plástico super resistente",33903013,NULL,0,0,5,NULL,NULL,0,NULL
+16,195,DOP,"Máscara facial para mergulho modelo full face (face total)",33903013,NULL,0,0,5,NULL,NULL,0,NULL
+17,196,DOP,"Máscara facial para mergulho modelo full face (face total)",33903013,NULL,0,0,5,NULL,NULL,0,NULL
+18,197,DOP,"Materiais e Medicamentos de Uso Hospitalar Veterinário",33903018,NULL,0,1,1,"Descricao alterada para eliminar duplicidade com demanda 198",NULL,1,NULL
+19,198,DOP,"Medicamento de Uso hospitalar",33903036,NULL,0,0,5,"Reutilizar ou Excluir",NULL,0,NULL
+20,199,DOP,"Equipamento de Uso Veterinário",44905208,44905208,0,0,1,NULL,NULL,1,NULL
+21,200,DOP,"Rebocador para Helicóptero",44905248,NULL,0,0,5,NULL,NULL,0,NULL
+22,201,DOP,"Equipamento de Visão Termal",44905254,NULL,0,0,1,NULL,NULL,0,NULL
+23,202,DOP,"Plataforma de Transporte de Tropa",44905254,NULL,0,0,1,NULL,NULL,0,NULL
+24,203,DOP,"Imageador Térmico",44905254,NULL,0,1,4,NULL,NULL,0,NULL
+25,204,DOP,"Paraquedas de Emergência",44905222,NULL,0,1,1,NULL,NULL,0,NULL
+26,205,DOP,"Simulador de Voo",44905254,NULL,0,1,1,NULL,NULL,0,NULL
+27,206,DOP,"Caminhão Tanque para QAV",44905252,NULL,0,1,5,NULL,NULL,0,NULL
+28,207,DOP,Boroscópio,44905254,NULL,0,1,1,NULL,NULL,0,NULL
+29,208,DOP,"Sistema Intensificador de Imagem",44905254,NULL,0,0,1,NULL,NULL,0,NULL
+30,209,DOP,"Escudo balístico nível III A",44905224,NULL,0,0,1,NULL,NULL,0,NULL
+31,210,DOP,"Maleta de Gerenciamento de Crises",44905222,NULL,0,0,1,NULL,NULL,0,NULL
+32,211,DOP,"Binóculo c/ retícula iluminada",44905222,NULL,0,0,1,NULL,NULL,0,NULL
+33,212,DOP,"Óculos espião - câmera espiã alta resolução",44905222,NULL,0,0,1,NULL,NULL,0,NULL
+34,213,DOP,"Jammer Bloqueador de sinal GPS/GPRS",44905222,NULL,0,1,1,NULL,NULL,0,NULL
+35,214,DOP,"Veiculo médio porte para ação antibomba",44905248,NULL,0,1,5,NULL,NULL,0,NULL
+36,215,DOP,"Robô antibombas de médio porte",44905222,NULL,0,1,1,NULL,NULL,0,NULL
+37,216,DOP,"Robô antibombas de grande porte",44905222,NULL,0,1,1,NULL,NULL,0,NULL
+38,217,DOP,"Escudo balístico",44905224,NULL,0,1,1,NULL,NULL,0,NULL
+39,218,DOP,"Protetores auriculares eletrônico",44905224,NULL,0,1,1,NULL,NULL,0,NULL
+40,219,DOP,Fibroscópio,44905222,NULL,0,0,5,NULL,NULL,0,NULL
+41,220,DOP,"Braço Telescópio EOD",44905222,NULL,0,0,1,NULL,NULL,0,NULL
+42,221,DOP,"Caixa de contenção EOD de grande porte",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+43,222,DOP,"Bote pneumático",44905220,NULL,0,0,5,NULL,NULL,0,NULL
+44,223,DOP,"Equipamento de visão noturna do tipo binocular geração iii",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+45,224,DOP,"Equipamento de visão noturna do tipo binocular geração iii",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+46,225,DOP,"Equipamento de visão noturna do tipo mira (clip-on)",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+47,226,DOP,"Equipamento do tipo designador e apontador laser",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+48,227,DOP,"Dispositivo led ir de uso portátil no corpo",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+49,228,DOP,"Equipamento mononocular de visão termal",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+50,229,DOP,"Quilogramas de lastros 2kg",33903013,NULL,0,0,5,NULL,NULL,0,NULL
+51,230,DOP,"Manômetros de teste em superfície",44905204,NULL,0,0,5,NULL,NULL,0,NULL
+52,231,DOP,"Conjuntos de reguladores compostos por primeiro e segundo estágios",44905204,NULL,0,0,5,NULL,NULL,0,NULL
+53,232,DOP,"Bússolas subaquáticas de pulso.",44905204,NULL,0,0,5,NULL,NULL,0,NULL
+54,233,DOP,"Câmeras subaquáticas",44905258,NULL,0,0,5,NULL,NULL,0,NULL
+55,234,DOP,"Compressores com pressão máxima de trabalho de 414 bar",44905258,NULL,0,0,5,NULL,NULL,0,NULL
+56,235,DOP,"Prancheta de pulso para mergulhador",44905258,NULL,0,0,5,NULL,NULL,0,NULL
+57,236,DOP,"Coletes com placas balísticas nível iii- masculino",44905224,NULL,0,0,1,NULL,NULL,0,NULL
+58,237,DOP,"Tripé especial com composição para tiro de precisão",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+59,238,DOP,"Cabeça articula",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+60,239,DOP,"Apoio para fuzil com encaixe tipo morsa",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+61,240,DOP,"Luneta de espotagem com aumento de até 60x",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+62,241,DOP,"Luneta para fuzil",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+63,242,DOP,"Cães de trabalho",44905246,NULL,0,0,1,NULL,NULL,1,NULL
+64,243,DOP,"Dispositivo de uso individual de visão noturna",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+65,244,DOP,"Kit/mochila arrombamento",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+66,245,DOP,Perneiras,44905222,NULL,0,0,5,NULL,NULL,0,NULL
+67,246,DOP,Equinos,44905246,NULL,0,0,1,NULL,NULL,1,NULL
+68,247,DPTS,"Compressor de ar 20 pés monofásico pressure alta pressão 175",44905238,NULL,0,0,5,NULL,NULL,0,NULL
+69,248,DPTS,"Lavadora industrial monofásica 3  cv bivolt - zm 30/40i",44905238,NULL,0,0,5,NULL,NULL,0,NULL
+70,249,DOP,"Tosquiadeira com 3 lâminas",44905240,NULL,0,0,5,NULL,NULL,0,NULL
+71,250,DPTS,"Vulcanizadora para pneu de Caminhão com braço articulado",44905238,NULL,0,0,5,NULL,NULL,0,NULL
+72,251,DPTS,"Destalonador e descolador de pneus de caminhão",44905238,NULL,0,0,5,NULL,NULL,0,NULL
+73,252,DPTS,"Assentador de talão, canhão de ara para montar pneu sem camara",44905238,NULL,0,0,5,NULL,NULL,0,NULL
+74,253,DPTS,"Espátula de pneu sem câmara",44905238,NULL,0,0,5,NULL,NULL,0,NULL
+75,254,DOP,"Semi-reboque de grande porte de 18 a 20 equinos",44905248,NULL,0,0,5,NULL,NULL,0,NULL
+76,255,DPTS,"Tenda sanfonada 3 x 3 metros",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+77,256,DPTS,"Tenda sanfonada 6 x 3 metros",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+78,257,DPTS,"Carrinho de mão 150 litros de poliétileno",44905248,NULL,0,0,5,NULL,NULL,0,NULL
+79,258,DPTS,Lixeira,33903022,NULL,0,0,5,NULL,NULL,0,NULL
+80,259,DOP,"Talão Eletrônico (Urbano e Rodoviário)",44905222,NULL,0,0,1,NULL,NULL,0,NULL
+81,274,DEC,"Alvo Metálico Placa AR 500. Espessura: 6mm,10mm ou 12mm. Dimensões: 230 mm de largura e 480 de altura.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+82,275,DEC,"Alvos de papel para tiro. Tipo Fogo circular. Dimensões 11 x 55 x 55 cm.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+83,276,DEC,"Alvos de papel para tiro. Tipo fotográficos 60 x 90 cm. Agressor armado com Espingarda Calibre 12.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+84,277,DEC,"Alvos de papel para tiro. Tipo fotográficos 60 x 90 cm. Agressor armado de frente.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+85,278,DEC,"Alvos de papel para tiro. Tipo fotográficos 60 x 90 cm. Agressor armado e de costas.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+86,279,DEC,"Alvos de papel para tiro. Tipo fotográficos 60 x 90 cm. Agressor armado em cima da moto.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+87,280,DEC,"Alvos de papel para tiro. Tipo PL PF com arma  Dimensões 43 x 63 cm.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+88,281,DEC,"Alvos de papel para tiro. Tipo Quatro cores. Dimensões 3 x 46 x 64 cm.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+89,282,DEC,"Alvos de papel para tiro. Tipo Silhueta Colt. Dimensões 4 x 55 x 80 cm.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+90,283,DEC,"Alvos de papel para tiro. Tipo super realista linha real Shoot R11 Alvo com estampa realista.",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+91,284,DEC,"Silhueta humana com perfil Raio-X para visualização de Órgãos Internos Dimensões: 60 x 90 cm",33903045,NULL,0,0,5,NULL,NULL,0,NULL
+92,285,DEC,"Abafador eletrônico Earmuff dobrável NRR 22 db. / Proteção auditiva: 22 dB/Com  amplificação antirruído. Volume: Total controle através de um único botão. Microfones: Ultrassensíveis e integrados Sensibilidade: Desligamento automático dos microfones acima",44905224,NULL,0,0,5,NULL,NULL,0,NULL
+93,286,DEC,"Aparelho para avalição de gordura corporal – bioimpedância",44905210,NULL,0,0,5,NULL,NULL,0,NULL
+94,287,DEC,"Apito Eletrônico - Feito em ABS de alto impacto. Potência sonora de 125 dB. Alimentado por bateria. 03 (três) opções de tons de apito.",44905224,NULL,0,0,5,NULL,NULL,0,NULL
+95,288,DPTS,"Equipamento calibrador de pneumáticos, eletrônico, 220v, com mangueiras.",44905238,NULL,0,0,5,NULL,NULL,0,NULL
+96,289,DPTS,"Equipamento com compressor de ar 20 pés, 200L, trifásico, bivolt, de alta pressão industrial.",44905238,NULL,0,0,5,NULL,NULL,0,NULL
+97,290,DEC,"Fuzil tipo air soft similar às de dotação PMDF.",44905214,NULL,0,0,5,NULL,NULL,0,NULL
+98,291,DPTS,"Macacos hidráulicos tipo Jacaré com capacidade de elevar até 2 toneladas; roda de poliuretano; cabo reforçado; pedal de acionamento rápido; rodízio em ferro revestida de poliuretano de alta resistência.",44905238,NULL,0,0,5,NULL,NULL,0,NULL
+99,292,DEC,"Pistolas tipo air soft similar às de dotação PMDF.",44905214,NULL,0,0,5,NULL,NULL,0,NULL
+100,293,DEC,"Sirene industrial longo alcance (mínimo 400m).",44905222,NULL,0,0,5,NULL,NULL,0,NULL
+101,353,DPTS,"Seguro Obrigatório Veícular",33903969,NULL,0,1,1,NULL,NULL,1,NULL
+102,363,DPGC,"Serviços Médico-Hospitalares e Laboratoriais",33903950,33903950,0,1,1,NULL,NULL,1,NULL
+103,364,DPGC,"Limpeza e Conservação das Unidades de Saúde",33903978,NULL,0,1,1,NULL,NULL,1,NULL
+104,365,DPGC,"Material Farmacológico",33903009,NULL,0,1,1,NULL,NULL,1,NULL
+105,366,DPGC,"Aparelhos, Equipamentos e Utensílios Médicos, Laboratoriais e Hospitalares",44905208,NULL,0,0,1,NULL,NULL,1,NULL
+106,367,DAO,"Manutenção e Conservação de Máquinas e Equipamentos Odontológicos",33903917,NULL,0,1,1,NULL,NULL,1,NULL
+107,368,DAO,"Serviços Técnicos Profissionais",33903905,NULL,0,0,1,NULL,NULL,1,NULL
+108,369,DPTS,Lubrificantes,33903001,NULL,0,1,1,NULL,NULL,1,NULL
+109,132,DPGC,"Filme Radiográfico para Unidades de Saúde - Medicina",33909230,NULL,5,1,1,NULL,NULL,1,NULL
+110,88,DPGC,"Material de Consumo Hospitalar Cirúrgico - Medicina",33903036,NULL,5,1,1,NULL,NULL,1,NULL
+111,170,CCS,"Aquisição de material de marketing institucional para distribuição gratuita",33903963,33903963,5,1,1,NULL,NULL,1,NULL
+112,118,DPGC,"Empresa de auditoria",33903950,NULL,35,1,1,NULL,NULL,1,NULL
+113,109,DPGC,"Serviço Continuados de Apoio Técnico - Especializados - Enfermeiros, psicologos, etc",33903950,NULL,35,1,1,NULL,NULL,1,NULL
+114,168,CCS,"Aquisição de Material Gráfico",33903963,33903963,52,1,1,NULL,NULL,1,NULL
+115,169,CCS,"Aquisição de Material Gráfico para o CPP",33903963,NULL,52,1,1,NULL,NULL,1,NULL
+116,85,DAO,"Equipamentos de Proteção Individual em Odontologia",33903028,NULL,93,0,1,NULL,NULL,1,NULL
+117,150,DPGC,"Aquisição de Equipamento de Proteção, Segurança e Socorro",44905224,NULL,93,1,1,NULL,NULL,1,NULL
+118,176,CI,"Equipamentos para operações de Inteligência",44905283,NULL,93,0,1,"Demanda Descrição da demanda alterada de "Equipamentos para inspeções técnicas de contra medidas (Varreduras)" para abranger demanda solicitada na Proposta de 2022, tendo em vista ambas apresentarem a mesma classificação da Despesa",2021-06-28,1,NULL
+119,177,DITEL,"Aquisição de Solução de OCR",44904000,NULL,93,1,1,NULL,NULL,1,NULL
+120,178,DITEL,"Aquisição de Vídeo Monitoramento Inteligente",44904000,NULL,93,1,1,NULL,NULL,1,NULL
+121,179,DITEL,"Aquisição de Solução WebInt",44904000,NULL,93,1,1,NULL,NULL,1,NULL
+122,180,DOP,"Explosivos e Munições para Tropas Especializadas",33903005,NULL,93,1,1,NULL,NULL,1,NULL
+123,263,DCC,"Microfone duplo sem fio e 2cx de som ativa",33903042,NULL,93,0,5,NULL,NULL,0,NULL
+124,270,DEC,"Serviço de Fornecimento de acervo Histórico",33903983,NULL,93,0,5,NULL,NULL,1,NULL
+125,271,DEC,"Prestação de Serviço de Pesquisa em Nuvem",33904018,NULL,93,0,5,NULL,NULL,1,NULL
+126,272,DEC,"Registro de Certificados e Diplomas",33904710,NULL,93,0,1,NULL,NULL,1,NULL
+127,321,DITEL,Servidores/Storage/Virtualização,44905268,NULL,93,0,1,NULL,NULL,1,NULL
+128,322,DITEL,"Solução de segurança computacional para a infraestrutura de redes e sistemas da PMDF - antigo(Antivirus/Anti-Spam/Ips)",44905237,NULL,93,0,1,NULL,NULL,1,NULL
+129,323,DITEL,"Aquisição de equipamentos de informática para as Unidades da Corporação",44905245,NULL,93,0,1,NULL,NULL,1,NULL
+130,327,DITEL,"Implantação De Solução de Atendimento e Despacho Integrado aos Recursos Tecnológicos da Pmdf",44904708,NULL,93,0,5,NULL,NULL,1,NULL
+131,328,DITEL,"Aquisição e Manutenção do Sistema de Backup em Disco com Duplicação e Disaster Recovery (DR)",44904708,NULL,93,0,1,NULL,NULL,1,NULL
+132,329,DITEL,"Aquisição da Central Telefônica",44905278,NULL,93,0,1,NULL,NULL,1,NULL
+133,330,DITEL,"Video Wall",44904708,NULL,93,0,5,"Descrição Alterada para diminuir a granularidade.",NULL,1,NULL
+134,153,DPGC,"Aquisição de Ferramentas. CPQV",33903042,NULL,94,1,1,NULL,NULL,1,NULL
+135,117,DPGC,"Imagens e Análises Clínicas",33903950,NULL,122,1,1,NULL,NULL,1,NULL
+136,121,DPGC,"Serviços Continuados de Limpeza de Áreas Hospitalares e Assemelhadas",33903978,NULL,140,1,1,NULL,NULL,1,NULL
+137,332,DPTS,"Explosivos e Munições",33903005,NULL,146,0,1,NULL,NULL,1,NULL
+138,333,DPTS,"Gêneros de Alimentação",33903007,33903007,146,1,1,NULL,NULL,1,NULL
+139,334,DPTS,"Material Educativo e Esportivo",33903014,NULL,146,0,5,NULL,NULL,1,NULL
+140,335,DPTS,"Material de Expediente",33903016,33903016,146,1,1,NULL,NULL,1,NULL
+141,336,DPTS,"Material de Acondicionamento e Embalagem",33903019,NULL,146,0,1,NULL,NULL,1,NULL
+142,337,DPTS,"Material de Cama, Mesa e Banho",33903020,NULL,146,0,1,NULL,NULL,1,NULL
+143,338,DPTS,"Material de Copa e Cozinha",33903021,NULL,146,0,1,NULL,NULL,1,NULL
+144,339,DPTS,"Material de Limpeza e Produção de Higienização",33903022,NULL,146,1,1,NULL,NULL,1,NULL
+145,341,DPTS,"Material de Proteção e Segurança",33903028,33903028,146,1,1,NULL,NULL,1,NULL
+146,342,DPTS,"Sobressalentes de Armamento",33903037,NULL,146,0,1,NULL,NULL,1,NULL
+147,345,DPTS,"Material de Sinalização Visual e Afins",33903044,NULL,146,0,1,NULL,NULL,1,NULL
+148,346,DPTS,"Premiações Desportivas",33903104,NULL,146,0,5,NULL,NULL,1,NULL
+149,347,DPTS,"Manutenção, conservação de Equipamentos e contratos de suporte logístico",33903618,NULL,146,0,1,NULL,NULL,1,NULL
+150,349,DPTS,"Manutenção e Conservação de Veículos",33903919,33903919,146,1,1,NULL,NULL,1,NULL
+151,350,DPTS,"Fornecimento de Alimentação",33903941,NULL,146,0,1,NULL,NULL,1,NULL
+152,355,DPTS,"Serviços de Abastecimento de Frota de Veículos",33903001,33903001,146,1,1,NULL,NULL,1,NULL
+153,356,DPTS,"Aparelhos e Utensílios Domésticos",44905212,NULL,146,0,1,NULL,NULL,1,NULL
+154,357,DPTS,"Máquinas, Utensílios e Equipamentos Diversos",44905234,NULL,146,0,1,NULL,NULL,1,NULL
+155,358,DPTS,"Máquinas, Instalações e Utensílios de Escritório",44905236,NULL,146,0,1,NULL,NULL,1,NULL
+156,359,DPTS,"Veículos Diversos",44905248,NULL,146,0,1,NULL,NULL,1,NULL
+157,360,DPTS,"Mobiliário em Geral",44905242,NULL,146,0,1,NULL,NULL,1,NULL
+158,361,DPTS,"Peças Não Incorporáveis a Imóveis",44905251,NULL,146,0,1,NULL,NULL,1,NULL
+159,362,DPTS,"Veículos de Tração Mecânica",44905252,44905252,146,0,1,NULL,NULL,1,NULL
+160,76,DPGC,"Medicamentos indispensáveis para a manutenção e funcionamento do CMED",33903009,NULL,156,1,1,NULL,NULL,1,NULL
+161,163,DPGC,"Medicamentos Antineoplásicos, Adjuvantes e Imunossupressores a serem utilizados no CMED",33903009,NULL,156,1,1,NULL,NULL,1,NULL
+162,165,DAO,"Materiais Odontológicos",33903010,NULL,156,1,1,NULL,NULL,1,NULL
+163,154,DAO,"Materiais e Utensílios de Saúde Complementar ao Serviço Odontológico",33903036,NULL,156,1,1,NULL,NULL,1,NULL
+164,167,DAO,"Materiais Psicopedagógicos para Odontopediatria e Educação em Saúde Bucal - Odontológicos",33903014,NULL,156,1,1,NULL,NULL,1,NULL
+165,135,DAO,"Reforma e Ampliação do COPMDF",44905100,NULL,169,1,1,NULL,NULL,1,NULL
+166,111,DPGC,"Hospital Geral",33903950,NULL,193,1,1,NULL,NULL,0,NULL
+167,115,DPGC,"Hemodiálise, Quimioterapia e Oncologia",33903950,NULL,193,1,1,NULL,NULL,1,NULL
+168,116,DPGC,"Saúde Mental",33903950,NULL,193,1,1,NULL,NULL,1,NULL
+169,110,DPGC,Psicoterapia,33903950,NULL,193,1,1,NULL,NULL,1,NULL
+170,113,DPGC,"Psiquiatria para adultos",33903950,NULL,193,0,5,NULL,NULL,1,NULL
+171,114,DPGC,"Assistência Clínica e Cirúrgica em Geral",33903950,NULL,193,0,5,NULL,NULL,1,NULL
+172,112,DPGC,"Home Care",33903950,NULL,193,1,1,NULL,NULL,1,NULL
+173,297,DINFRA,"Construção do Centro Odontológico",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+174,298,DINFRA,"Construção do 14º BPM",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+175,299,DINFRA,"Construção CAPS",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+176,300,DINFRA,"Construção do 3º BPM",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+177,301,DINFRA,"Construção do 2º BPM",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+178,302,DINFRA,"Construção do Centro de Proteção e Qualidade de Vida",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+179,303,DINFRA,"Construção do 15º BPM",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+180,304,DINFRA,"Construção do 4º BPM",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+181,305,DINFRA,"Construção do 16º BPM",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+182,306,DINFRA,"Construção do 28º BPM",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+183,307,DINFRA,"Construção do Galpões Multiuso",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+184,308,DINFRA,"Construção do 8º BPM",44905101,NULL,210,0,5,NULL,NULL,1,NULL
+185,294,DINFRA,"Manutenção Predial",33903704,NULL,211,1,1,NULL,NULL,1,NULL
+186,331,DPTS,"Gás Engarrafado",33903004,NULL,211,1,1,NULL,NULL,1,NULL
+187,340,DPTS,"Material Elétrico e Eletrônico",33903026,NULL,211,1,1,NULL,NULL,1,NULL
+188,344,DPTS,Ferramentas,33903042,NULL,211,1,1,NULL,NULL,1,NULL
+189,351,DPTS,"Serviços de Energia Elétrica",33903943,33903943,211,1,1,NULL,NULL,1,NULL
+190,352,DPTS,"Serviços de Água e Esgoto",33903944,33903944,211,1,1,NULL,NULL,1,NULL
+191,354,DINFRA,"Serviços de Limpeza e Conservação",33903978,NULL,211,1,1,NULL,NULL,1,NULL
+192,309,DITEL,"Empresa para fornecimento de material de consumo para manutenção preventiva de rede de dados",33904011,NULL,243,1,1,NULL,NULL,1,NULL
+193,312,DITEL,"Fornecimento de equipamentos e peças para manutenção preventiva de rede de dados",33904011,NULL,243,1,1,NULL,NULL,1,NULL
+194,172,CCS,"Contratação de Empresa para Organização da Corrida Tiradentes",33903923,33903923,254,1,1,NULL,NULL,1,NULL
+195,60,DPP,"Auxílio Creche de Pessoal Civil",33900809,33900855,256,1,1,NULL,NULL,1,NULL
+196,66,DPP,"Auxílio Transporte de Pessoal Civil",33904901,33904901,256,1,1,NULL,NULL,1,NULL
+197,65,DPP,"Auxílio Alimentação de Pessoal Civil",33904601,33904602,256,1,1,NULL,NULL,1,NULL
+198,61,DPP,"Diária no País",33901514,33901514,256,1,1,NULL,NULL,1,NULL
+199,-5,DINFRA,"Sem previsão",1,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+200,62,DPP,"Diárias no Exterior",33901516,NULL,256,1,1,NULL,NULL,1,NULL
+201,63,DPP,"Auxílio Fardamento de Pessoal Militar",33901901,NULL,256,1,1,NULL,NULL,1,NULL
+202,67,DPP,"Indenização Oriunda de Débitos Periódicos Vinculada à Sentenças Judiciais de Pensionistas",33905901,NULL,256,1,1,NULL,NULL,1,NULL
+203,73,DPP,"Ajuda de Custo de Pessoal Militar",33909318,NULL,256,1,1,NULL,NULL,1,NULL
+204,74,DPP,"Indenização de Transporte de Pessoal Militar",33909319,NULL,256,1,1,NULL,NULL,1,NULL
+205,75,DPP,"Indenização de Moradia de Pessoal Militar",33909320,NULL,256,1,1,NULL,NULL,1,NULL
+206,57,DPP,"Auxílio Funeral de Pessoal Militar Ativo",33900802,NULL,256,1,1,NULL,NULL,1,NULL
+207,58,DPP,"Auxílio Natalidade de Pessoal Militar Ativo",33900806,NULL,256,1,1,NULL,NULL,1,NULL
+208,59,DPP,"Auxílio Creche de Pessoal Militar",33900810,NULL,256,1,1,NULL,NULL,1,NULL
+209,64,DPP,"Auxílio Alimentação de Pessoal Militar",33904602,NULL,256,1,1,NULL,NULL,1,NULL
+210,14,DPP,Vencimentos,31901101,31901101,261,1,1,NULL,NULL,1,NULL
+211,15,DPP,"Adicional de Tempo de Serviço",31901104,31901104,261,1,1,NULL,NULL,1,NULL
+212,26,DPP,"Abono de Permanência",31901107,31901195,261,1,1,NULL,NULL,1,NULL
+213,19,DPP,"Gratificação de Habilitação",31901118,31901118,261,1,1,NULL,NULL,1,NULL
+214,18,DPP,"Complementação de Vencimentos e Salários",31901187,31901114,261,1,1,NULL,NULL,1,NULL
+215,56,DPP,"Contribuição Patronal de Pessoal Civil Estatutário",1,31911308,261,1,1,NULL,NULL,1,NULL
+216,20,DPP,"Gratificação Natalícia Pessoal Civil Estatutário",1,31901121,261,1,1,NULL,NULL,1,NULL
+217,23,DPP,"Abono de Férias Constitucional",NULL,31901132,261,1,1,NULL,NULL,1,NULL
+218,25,DPP,"Representação e Vencimentos de Pessoal Civil Comissionado",NULL,31901167,261,1,1,NULL,NULL,1,NULL
+219,21,DPP,"Gratificação Pessoal Civil Celetistas",NULL,31901122,261,1,1,NULL,NULL,1,NULL
+220,35,DPP,"Gratificação Militar de Segurança Institucional",NULL,31901216,261,1,1,NULL,NULL,1,NULL
+221,31,DPP,"Gratificação Natalícia de Pessoal Militar Ativo",NULL,31901208,261,1,1,NULL,NULL,1,NULL
+222,36,DPP,"Abono de Férias de Gratificação Militar de Segurança Institucional",NULL,31901218,261,1,1,NULL,NULL,1,NULL
+223,2,DPP,"Gratificação Natalícia Incorporada por Pessoal Inativo",NULL,31900112,261,1,1,NULL,NULL,1,NULL
+224,9,DPP,"Gratificação de Representação de Pessoal Militar Inativo",NULL,31900163,261,1,1,NULL,NULL,1,NULL
+225,10,DPP,"Gratificação de Representação Militar para Incorporada às Pensões",NULL,31900301,261,1,1,NULL,NULL,1,NULL
+226,13,DPP,"Gratificação Natalícia Incorporada às Pensões",NULL,31900305,261,1,1,NULL,NULL,1,NULL
+227,41,DPP,"Instituto Nacional de Seguro Social Patronal a Recolher",31901302,31901302,261,1,1,NULL,NULL,1,NULL
+228,27,DPP,Soldo,31901201,NULL,261,1,1,NULL,NULL,1,NULL
+229,28,DPP,"Adicional Militar",31901204,NULL,261,1,1,NULL,NULL,1,NULL
+230,29,DPP,"Adicional de Habilitação",31901206,NULL,261,1,1,NULL,NULL,1,NULL
+231,30,DPP,"Gratificação de Representação",31901208,NULL,261,1,1,NULL,NULL,1,NULL
+232,32,DPP,"Gratificação de Função de Natureza Especial",31901209,NULL,261,1,1,NULL,NULL,1,NULL
+233,34,DPP,"Vantagem Pecuniária Especial",31901211,NULL,261,1,1,NULL,NULL,1,NULL
+234,38,DPP,"Gratificação Natalícia",31901243,NULL,261,1,1,NULL,NULL,1,NULL
+235,39,DPP,"Abono de Férias",31901245,NULL,261,1,1,NULL,NULL,1,NULL
+236,40,DPP,"Complementação Salarial de Pessoal Militar",31901287,NULL,261,1,1,NULL,NULL,1,NULL
+237,42,DPP,"Sentança Judicial não Transitada em Julgado de Caráter Continuado de Pessoal Ativo Civil",31909114,NULL,261,1,1,NULL,NULL,1,NULL
+238,55,DPP,"Indenização de Licenças Especiais",31909415,NULL,261,1,1,NULL,NULL,1,NULL
+239,33,DPP,"Gratificação de Serviço Voluntário",31901210,NULL,261,1,1,NULL,NULL,1,NULL
+240,37,DPP,"Férias Vencidas Proporcionais",31901242,NULL,261,1,1,NULL,NULL,1,NULL
+241,1,DPP,"Adicional por Tempo de Serviço de Pessoal Civil",31900109,NULL,261,1,1,NULL,NULL,1,NULL
+242,3,DPP,"Complementação de Aposentadoria de Pessoal Militar",31900115,NULL,261,1,1,NULL,NULL,1,NULL
+243,4,DPP,"Vantagem Pecuniária Especial de Pessoal Militar Inativo",31900117,NULL,261,1,1,NULL,NULL,1,NULL
+244,5,DPP,"Proventos de Pessoal Militar Inativo",31900121,NULL,261,1,1,NULL,NULL,1,NULL
+245,6,DPP,"Vantagens Incorporadas de Pessoal Militar Inativo",31900122,NULL,261,1,1,NULL,NULL,1,NULL
+246,7,DPP,"Auxílio Invalidez de Pessoal Militar Inativo",31900123,NULL,261,1,1,NULL,NULL,1,NULL
+247,8,DPP,"Décimo Terceiro Salário de Pessoal Militar Inativo",31900126,NULL,261,1,1,NULL,NULL,1,NULL
+248,43,DPP,"Sentença Judicial não Transitada em Julgado de Caráter Continuado de Pessoal Inativo",31909115,NULL,261,1,1,NULL,NULL,1,NULL
+249,11,DPP,"Pensões Militares",31900302,NULL,261,1,1,NULL,NULL,1,NULL
+250,12,DPP,"Gratificação Natalícia de Pensionistas Militares",31900304,NULL,261,1,1,NULL,NULL,1,NULL
+251,265,DEC,"Curso de Capacitação",33903948,33903948,262,0,5,NULL,NULL,1,NULL
+252,266,DEC,"Congressos, Seminários e Palestras.",33903948,NULL,262,0,5,NULL,NULL,1,NULL
+253,268,DEC,"Prestação de Serviços Contínuos de Docência",33903965,NULL,262,1,1,NULL,NULL,1,NULL
+254,269,DEC,"Prestação de Serviços de Apoio ao Ensino",33903965,NULL,262,1,1,NULL,NULL,1,NULL
+255,273,DEC,"Contração direta de professores - CAO e CAE",33903606,NULL,262,0,5,NULL,NULL,0,NULL
+256,166,DAO,"Serviço de Assinatura de Software de Base para Controle de Dados e Prontuários Odontológicos",33903911,NULL,268,1,1,NULL,NULL,1,NULL
+257,319,DITEL,"Suíte de Aplicativos de Escritório",33903994,NULL,268,0,1,NULL,NULL,1,NULL
+258,324,DITEL,"Aquisição de Softwares para as Unidades da Corporação",44904005,NULL,268,0,5,NULL,NULL,1,NULL
+259,326,DITEL,"Aquisição de solução(ões) para realização de Perícia Digital.",44904708,NULL,268,0,5,NULL,NULL,0,NULL
+260,343,DPTS,"Peças e Assessórios para Manutenção de Veículos",33903039,NULL,293,1,1,NULL,NULL,1,NULL
+261,120,DPGC,"Manutenção de Equipamentos da Medicina",33903950,NULL,307,1,1,NULL,NULL,1,NULL
+262,127,DPGC,"Serviço de recolhimento de resíduos sólidos de saúde - Medicina",33903978,NULL,307,1,1,NULL,NULL,1,NULL
+263,119,DPGC,"Serviço de Reposição de Peças da Medicina",33903950,NULL,307,1,1,NULL,NULL,1,NULL
+264,125,DPGC,"Serviço de Lavanderia para insumos utilizados em procedimentos da Medicina",33903978,NULL,307,0,5,NULL,NULL,1,NULL
+265,97,DPGC,"Manutenção de Equipamentos da Medicina",33903917,NULL,307,1,5,"'Descrição da demanda alterada de ''Serviço de adaptação, manutenção corretiva inicial de sistema de vácuo clínico e ar comprimido medicinal - CMED'' para evitar duplicação de Despesas com mesma classificação. '",NULL,1,NULL
+266,108,DPGC,"Serviço de medição da incidência de radiação emitida pelos aparelhos de RX - CMED",33903950,NULL,307,1,1,NULL,NULL,1,NULL
+267,164,DAO,"Serviço de Lavanderia para insumos utilizados em procedimentos Odontológicos",33903905,NULL,307,1,1,NULL,NULL,1,NULL
+268,91,DAO,"Serviços Continuados de Apoio Técnico - Auxiliares e Técnicos em Saúde Bucal - CO",33903905,NULL,307,1,1,NULL,NULL,1,NULL
+269,101,DAO,"Serviço de Fornecimento de Peças para Equipamentos de Radiologia odontológica",33903917,NULL,307,1,1,NULL,NULL,1,NULL
+270,105,DAO,"Serviço de Manutenção de Equipamentos de Radiologia Odontológica",33903917,NULL,307,1,1,NULL,NULL,1,NULL
+271,102,DAO,"Serviço de Manutenção de Instalações, Acessórios e Mobiliários das Unidades Odontológicas Móveis - UNAMPRO's",33903917,NULL,307,0,1,NULL,NULL,1,NULL
+272,123,DAO,"Serviço de Radiometria e Medição da Incidência de Radiação Emitida pelos Aparelhos de RX Odontológicos.",33903905,NULL,307,1,1,NULL,NULL,1,NULL
+273,124,DAO,"Serviço de Dosimetria da Incidência de Radiação Emitida pelos Aparelhos de RX Odontológicos",33903905,NULL,307,1,1,NULL,NULL,1,NULL
+274,161,DAO,"Serviço de Manutenção de equipamentos Odontológicos,",33903917,NULL,307,1,1,NULL,NULL,1,NULL
+275,162,DAO,"Serviço de Reposição de peças de Equipamentos Odontológicos",33903917,NULL,307,1,1,NULL,NULL,1,NULL
+276,130,DAO,"Serviço de Adesivação das Unidades de Serviço Odontológico",33903999,NULL,307,1,1,NULL,NULL,1,NULL
+277,155,DPGC,"Serviço de  Recolhimento de Resíduos de Saúde das Unidades Odontológicas de Atendimento",33903905,NULL,307,1,1,NULL,NULL,1,NULL
+278,92,DAO,"Aluguel de móvel para uso de Unidade de Saúde",33903910,NULL,307,1,1,NULL,NULL,1,NULL
+279,145,DPGC,"Equipamentos Médicos hospitalares - CMED",44905208,NULL,313,0,1,NULL,NULL,1,NULL
+280,144,DPGC,"Equipamentos de Diagnósticos - ECG - CMED.",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+281,143,DPGC,"Equipamentos de Diagnósticos - RX +PACS - CMED.",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+282,142,DPGC,"Equipamentos e Mobiliário Técnico Clínico para o - CMED.",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+283,147,DAO,"Mobiliário Técnico Clínico-Odontológico - Modular",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+284,148,DAO,"Equipamentos Odontológicos",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+285,149,DAO,"Equipamentos para Central de Material Esterilizado dos Serviços Odontológicos",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+286,156,DAO,"Mobiliário Técnico Clínico-Odontológico Sob Medida",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+287,157,DAO,"Equipamentos de Saúde Complementar ao Serviço Odontológico",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+288,158,DAO,"Equipamentos para Documentação Ortodôntica e Fotografia Odontológica",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+289,159,DAO,"Equipamentos Psicopedagógicos para Odontopediatria e Educação em Saúde Bucal",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+290,160,DAO,"Equipamentos de Radiologia Odontológica",44905208,NULL,313,1,1,NULL,NULL,1,NULL
+291,313,DITEL,"Outsourcing de impressoras",33903983,NULL,313,1,1,"Natureza da Despesa alterado de "33904016"  pelo DLF no reajuste da Proposta de 2022",NULL,1,NULL
+292,315,DITEL,"Telefonia - contratação de tronco para telefonia",33903958,33903958,313,0,1,,NULL,1,NULL
+293,151,DPGC,"OSS - Organização Social de Saúde",33504305,NULL,356,1,1,NULL,NULL,1,NULL
+294,267,DEC,"Prestação de Serviços Contínuos de Docência CMT",33903965,NULL,356,1,1,NULL,NULL,1,NULL
+295,325,DITEL,"Solução de vídeo monitoramento inteligente",44905222,NULL,380,0,5,NULL,NULL,1,NULL
+296,348,DPTS,"Locação de Imóveis",33903910,33903010,393,1,1,NULL,NULL,1,NULL
+297,134,DPGC,Ressarcimento,33909308,NULL,402,1,1,NULL,NULL,1,NULL
+298,87,DPGC,"Material para uso laboratorial",33903035,NULL,402,1,1,NULL,NULL,1,NULL
+299,89,DPGC,"Assinatura de periódicos e Anuidades Específicas para Área de Saúde",33903901,NULL,402,1,1,NULL,NULL,1,NULL
+300,133,DPGC,"Despesas de Exercícios Anteriores",33909239,NULL,402,1,1,NULL,NULL,1,NULL
+301,171,CCS,"Solução de Clipping",33903949,NULL,402,1,1,NULL,NULL,1,NULL
+302,173,CCS,"Estrutura de Eventos",33903914,33903914,402,1,1,NULL,NULL,1,NULL
+303,260,DCC,"Material Químico para Perícia",33903011,33903011,402,0,1,NULL,NULL,1,NULL
+304,261,DCC,"Material Laboratorial para Perícia",33903035,NULL,402,0,1,NULL,NULL,1,NULL
+305,262,DCC,"Ferramentas para Perícia",33903042,33903042,402,0,1,NULL,NULL,1,NULL
+306,264,DEC,"Material Bibliográfico",33903046,NULL,402,0,5,NULL,NULL,1,NULL
+307,175,CI,"Verba Operacional SIPOM",33909501,NULL,429,1,1,NULL,NULL,1,NULL
+308,310,DITEL,"Empresa Especializada para manutenção preventiva/corretiva da rede da PMDF",33904011,33904011,430,0,1,,NULL,1,NULL
+309,311,DITEL,"Empresa especializada para serviços de monitoramento dos sistemas de TI e atendimento ao usuário",33904015,NULL,430,0,1,,NULL,1,NULL
+310,318,DITEL,"Manutenção da rede TETRA (AIRBUS)",33904011,NULL,430,0,1,,NULL,1,NULL
+311,320,DITEL,"Digitalização dos boletins administrativos e arquivo geral",33904015,NULL,430,0,5,,NULL,1,NULL
+312,295,DINFRA,"Pagamento de Taxas RRT - CRAU/DF",33904710,NULL,449,1,1,NULL,NULL,1,NULL
+313,296,DINFRA,"Pagamento de Taxas CREA/DF",33904710,NULL,449,1,1,NULL,NULL,1,NULL
+314,316,DITEL,"Métrica e Mensuração de Software em regime de Fábrica de Métrica (FM)",33904015,NULL,449,0,5,,NULL,1,NULL
+315,317,DITEL,"Fábrica de software - contratação de empresa especializada em fábrica de software",33904008,NULL,449,0,5,,NULL,1,NULL
+316,314,DITEL,"Link de internet",33903958,33903958,450,0,1,,NULL,1,NULL
+317,90,DPGC,"Serviço de Gestão hospitalar/ Engenharia Clínica",33903905,NULL,502,1,5,NULL,NULL,1,NULL
+318,370,DAO,"Material para Manutenção de Bens Móveis Odontológicos",33903025,NULL,NULL,1,1,"Demanda criada por solicitação da DAO conforme Processo Sei nº 00054-00037598/2021-36",2021-04-26,1,NULL
+369,-1,DPP,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+370,-2,DPGC,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+371,-3,DAO,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+372,-4,DPTS,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+373,-6,DITEL,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+374,-7,DOP,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+375,-8,DEC,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+376,-9,DCC,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+377,-10,CCS,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+378,-11,CI,"Sem previsão",NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL
+379,371,DPGC,"Suprimentos de Informática para medicina",33903017,NULL,93,1,1,"Solicitação conforme processo 00054-00041828/2020-81",2021-04-26,1,NULL
+381,372,DPGC,"Peças e Material para Manutenção de Bens Móveis",33903025,NULL,93,1,1,"Demanda criada por solicitação do DSAP conforme processo 00054-00041828/2020-81 ",2021-04-26,1,NULL
+384,373,DITEL,"Aquisição de Switches",44905237,NULL,93,0,1,"Demanda criada na Proposta Setorial 2022",2021-06-28,1,NULL
+385,374,DITEL,"Câmeras Individuais Corporais (Body Cam)",44905245,44905233,93,0,5,"Demanda criada para proposta Setorial 2022",2021-06-28,1,NULL
+386,375,DITEL,"Aquisição de Computadores Pessoais",44905245,NULL,93,0,1,"Demanda criada para Proposta Setorial 2022",2021-06-28,1,NULL
+387,376,CI,"Aquisição de Livros para Atividade de Inteligência",44905218,NULL,43,0,5,"Demanda criada para Proposta Setorial 2022",2021-06-28,1,NULL
+388,377,CI,"Instrução na Área de Inteligência",33903948,NULL,361,0,5,"Demanda criada para Proposta Setorial 2022",2021-06-28,1,NULL
+389,378,CI,"Aquisição de Equipamentos e Material Permanente para a Atividade de Inteligência",44905269,NULL,145,0,5,"Demanda criada para Proposta Setorial 2022, Descrição Alterada para evitar detalhamento excessivo do Plano Interno de Orçamento. No caso em tela a Descrição "Reestruturação de Auditório do CI e Laboratório" utilizada inicialmente impediriam que a demanda fosse utilizada para outros equipamentos".",2021-06-28,1,NULL
+390,379,DAO,"Ressarcimento Odontológico",33909308,NULL,402,1,1,"Demanda criada para Proposta Setorial 2022",2021-06-28,1,NULL
+391,380,DPGC,"Serviços Continuados de Apoio Técnico Especializado",33903979,NULL,307,1,1,"Demanda criada para Proposta Setorial 2022",2021-06-28,1,NULL
+392,381,DPP,"Licença Especial Exercício Anterior",31909294,NULL,261,0,1,"Demanda criada para Proposta Setorial 2022",2021-06-28,1,NULL
+393,382,DPP,"Adicional por Tempo de Serviço de Pessoal Militar",31900110,NULL,261,1,5,"Demanda criada para Proposta Setorial 2022",2021-06-28,1,NULL
+394,383,DPP,"Sentença Judicial não Transitada em Julgado de Caráter Continuado de Pessoal Inativo Militar",31909118,NULL,261,0,3,"Demanda criada para Proposta Setorial 2022",2021-06-28,1,NULL
+395,384,DINFRA,"Estudos e Projetos",44905180,NULL,118,1,5,"Demanda criada para Proposta Setorial 2022",2021-06-28,1,NULL
+398,385,DOP,"Abastecimento fora do DF",33903003,NULL,93,1,5,"Demanda criada para Proposta Setorial 2022",2021-06-29,1,NULL
+399,386,DOP,"Material de Manobra e Patrulhamento para Tropa Especializada",33903027,NULL,402,0,1,"Demanda criada para Proposta Setorial 2022",2021-06-29,1,"Bolsa para treinamento, alavanca de aço, alicate corta frio, cocal descartável para etilômetro."
+400,387,DOP,"Material de Proteção e Segurança para Uso de Tropa Especializada",33903028,33903028,402,1,1,"Demanda criada para Proposta Setorial 2022",2021-06-29,1,"Plate Carrier, Bolso APH, Equipamento para contenção de Fauna."
+401,388,DOP,"Sobressalentes de Máquinas e Motores para Embarcações",33903034,NULL,402,0,5,"Demanda criada para Proposta Setorial 2022",2021-06-29,1,NULL
+402,389,DOP,"Conservação de Bens Móveis de Outra Natureza",33903621,NULL,402,0,5,"Demanda criada para Proposta Setorial 2022",2021-06-29,1,"Serviços de Terceiros pessoa física. Tratador de Cães."
+403,390,DOP,"Manutenção de Equipamentos Veterinários",33903917,NULL,375,1,1,"Demanda criada para Proposta Setorial 2022",2021-06-29,1,NULL
+404,391,DOP,"Manutenção de Embarcações",33903919,NULL,93,1,1,"Demanda criada para Proposta Setorial 2022",2021-06-29,1,NULL
+405,392,DOP,"Manutenção de Veículos Especiais",33903918,NULL,293,0,1,"Demanda criada para Proposta Setorial 2022",2021-06-29,1,NULL
+406,393,DOP,"Conservação e Manutenção de Bens Móveis de Outra Natureza",33903920,NULL,375,1,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,"Pessoa de terceiros pessoa jurídica. Serviços de ferrageamento, serviços de casqueamento serviços de limpeza de baia e trato equino. "
+407,394,DOP,"Outros Serviços de Terceiros",33903999,33903999,5,1,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,"Procedimentos de emergência, revalidação CMA 1ª Classe."
+408,395,DOP,"Manutenção e Conservação de Máquinas e Equipamentos",33903917,NULL,94,1,1,"Demanda criada para proposta Setorial 2022",2021-06-29,0,NULL
+409,396,DOP,Aeronaves,44905202,NULL,292,0,5,"Demanda criada para proposta Setorial 2022",2021-06-29,1,NULL
+410,397,DOP,"Equipamentos de Medição e Orientação",44905204,NULL,402,0,5,"Demanda criada para proposta Setorial 2022",2021-06-29,1,"Bússula, Manômetros, aparelho medidor de transmitância."
+411,398,DOP,Embarcações,44905220,NULL,402,0,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,NULL
+412,399,DOP,"Equipamentos de Manobra e Patrulhamento para Tropas Especializadas",44905222,NULL,402,0,5,"'Demanda criada para proposta Setorial 2022'",2021-06-29,1,"Binóculo, mira holográfica, magnificador, conjunto de disrupção e brechas com explosivos, óculos de visão noturna, corda estática, estribo com degraus, fita tubilar, freio oito, mosquetão, peoitoral para ascensão, equipamento de visão nermão cabeça articulada, apoio de fuzil , luneta, kit mochila arrombamento, talão eleytrônico, tripé."
+413,400,DOP,"Equipamentos de Proteção Segurança e Socorro",44905224,NULL,402,0,1,"'Demanda criada para proposta Setorial 2022'",2021-06-29,1,"Traje Antifragmentação, robô antibombas, Assento para escalada, colete salva vidas, traje de proteção química e biológica"
+414,401,DOP,Etilômetros,44905234,NULL,402,0,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,NULL
+415,402,DOP,"Equipamentos de Montaria",44905246,NULL,402,0,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,NULL
+416,403,DOP,"Veículos Adaptados para Tropas Especiais",44905252,NULL,402,0,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,
+417,404,DOP,"Carros de Combate",44905253,NULL,402,0,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,NULL
+418,405,DOP,"Equipamentos, Peças e Acessórios Aeronáuticos",44905254,NULL,402,0,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,"Simuladoor de voo, imageador térmico, plataforma de transporte de tropa, forncimento de paeças par a aeronaves."
+419,406,DOP,"Equipamentos, Peças e Acessórios de Proteção ao Voo",44905256,44905256,402,0,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,"sitema intensificador de imagem, macacão e jaqueta de voo."
+420,407,DOP,"Equipamentos de Mergulho e Salvamento",44905258,NULL,402,0,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,"nadandeira, cinto para lastro, lastro, roupa para mergulho, saco elavatório, boia de sinalização, capuz de neoprene, carretel para mergulho, lanterna, capa tática flutuante, conjunto regulador, cilindro, botas para mergulho, boia salva vidas, máscara completa para mergulho."
+421,408,DOP,"Equipamentos de Proteção e Vigilância Ambiental",44905283,NULL,402,0,1,"Demanda criada para proposta Setorial 2022",2021-06-29,1,NULL
+422,409,DPTS,"Suprimentos de Informática",33903017,33903032,93,1,1,"Demanda criada para proposta Setorial 2022",2021-07-01,1,NULL
+423,410,DPTS,"Locação de Bens Móveis",33903914,33903914,93,1,1,"Demanda criada para proposta Setorial 2022",2021-07-01,1,NULL
+424,411,DPTS,"Consultorias Diversas",33903501,NULL,93,0,5,"Demanda criada para proposta Setorial 2022",2021-07-01,1,NULL
+425,412,DPTS,"Equipamentos de Manobra e Patrulhamento",44905222,44905222,93,0,5,"Demanda criada para proposta Setorial 2022",2021-07-01,1,NULL
+426,413,DITEL,"Investimentos para Rede Tetra",44905235,NULL,93,1,1,"Demanda criada para proposta Setorial 2022 pela seção de Orçamento para sustituir previsão de investimento da rede tetra.",2021-07-02,1,NULL
+427,414,DPTS,"Material Bélico",44905214,NULL,93,1,1,"Demanda criada para proposta Setorial 2022 pela seção de Orçamento para sustituir previsão de investimento da rede tetra.",2021-07-08,1,NULL
+428,415,DPTS,"Pneus para Veículos",33903039,33903039,93,1,1,"Demanda criada para proposta Setorial 2022 pela seção de Orçamento para sustituir previsão de investimento da rede tetra.",2021-07-08,1,NULL
+429,416,DPTS,"Máquinas e Equipamentos Energéticos",44905230,44905230,NULL,0,5,"Demanda criada por solicitação do  DLF para a Proposta 2022, coforme solicitação constante no processo 00054-00074299/2021-82",2021-07-08,1,NULL
+430,417,DPTS,"Equipamentos Eletrônicos de Audiviosual",44905233,44905233,93,0,5,"Demanda criada por solicitação do  DLF para a Proposta 2022, coforme solicitação constante no processo 00054-00074299/2021-82",2021-07-08,1,NULL
+431,418,DPGC,"Gás Engarrafado para Unidades de Saúde",33903004,NULL,NULL,0,1,"Demanda criada por solicitação do  DLF para a Proposta 2022, coforme solicitação constante no processo 00054-00041828/2020-81",2021-07-08,1,NULL
+432,419,DPTS,"Aparelhos e equipamentos para Esportes e Diversões",44905210,NULL,NULL,0,5,"Demanda criada para absorver Emanda Parlamentar",2021-07-28,1,NULL
+433,420,DITEL,"Aquisição de Aeronaves Remotamente Pilotadas",44905202,44905202,NULL,0,5,"Demanda criada para absorver Emenda Parlamentar conforme Processo00054-00078421/2021-90  ",2021-07-28,1,NULL
+434,421,DPTS,"Coletes Balísticos",44905224,44905224,NULL,0,1,"Demanda criada para absorver Emenda Parlamentar conforme Processo00054-00078421/2021-90  ",2021-07-28,1,NULL
+435,422,CI,"Viatura de Inteligência",44905248,44905248,NULL,0,5,"Demanda criada para absorver Emenda Parlamentar conforme Processo00054-00078421/2021-90  ",2021-07-28,1,NULL
+436,423,DEC,"Material Técnio para Treinamento",33903045,NULL,NULL,0,1,"Demanda criada para absorver demandas muito específicas do DEC",2021-07-28,1,"Alvos de Papel, Alvos Metálicos, Silheta Humanas."
+437,425,DEC,"Material de Segurança para Treinamento",44905224,NULL,NULL,0,1,"Demanda criada para absorver demandas muito específicas do DEC",2021-07-28,1,"Abafadores, Óculos de Proteção, Joelheiras."
+438,424,DEC,"Simulacro de Armas para Treinamento",44905214,NULL,NULL,0,5,"Demanda criada para absorver demandas muito específicas do DEC",2021-07-28,1,"Air Soft, Paintball"
+439,426,DITEL,"Manutenção Corretiva, Adaptativa e Sustentação de Softwares",33904007,33904007,269,0,1,"Demanda criada para atender demanda da Ditel conforme processo 00054-00071963",2021-12-20,1,"Upgrade de licensa vitalícia, Renovação de licenças vitalíciasatualizações de licenças vitalícias, Suporte Técnico para Licenças vitalícias"

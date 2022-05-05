@@ -41,3 +41,5 @@ posteriormente crie a função que será exibida no html
 EM seguida no prompt de comando
 python manage.py migrate
 python manage.py inspectdb > siofapp/models.py
+
+para criar o cabeçalho
