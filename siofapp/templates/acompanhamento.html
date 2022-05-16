@@ -25,40 +25,27 @@
          --><li class="itemMenu"><a href="/admin/"><button>Administração de Dados</button></a></li><!--
      --></ul><!--
  --></nav><!--
- --><div class="conteudo"><!--
-     --><nav class="menuVertical"><!--
-         --><ul style="list-style-type: none" class="listaMenuVertical"><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/DPP">Pessoal e Ativo e Inativo</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/DPGC/">Saúde e Assistência ao Pessoal</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/DAO/">Odontologia</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/DEC/">Ensino e Pesquisa</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/DPTS/">Materiais, Equipamentos e Serviços de Uso Comum</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/Dinfra/">e Obras e Manutenção Predial e Serviços Gerais</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/Ditel/">Tecnologia da Informação e Comunicações</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/DOP/">Material e Equipamento Operacional Especial</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/CCS/">Cerimonial e Propaganda Institucional</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/DCC/">Materiais e Equipamentos de Uso Correicional e Perícia</a></li><!--
-             --><li class="itemMenuVertical"><a href="/cadastro/DEC/">Inteligência</a></li>
-            </ul>
-        </nav>
+ --><div class="conteudo">
     <table>
             <thead >
                 <tr>
-                  <th>Código:</th>
-                  <th>Descrição:</th>
-                  <th>Disponibilidade:</th>
-                  <th>Periodicidade:</th>
-                  <th>Natureza da Despesa:</th>
+                  <th>Código da Demanda:</th>
+                  <th>Demanda:</th>
+                  <th>Processo:</th>
+                  <th>Especificação:</th>
+                  <th>Quantidade:</th>
+                  <th>Valor:</th>
                 </tr>
             </thead>
             <tbody>
-            {% for demanda in cadastroCso %}
+            {% for demanda in acompanhamento %}
                 <tr>
-                  <td> {{demanda.cad_codigodemanda}}</td>
-                  <td  style = "text-align:left"> {{demanda.cad_descricao}}</td>
-                  <td> {{demanda.cad_especiedisponibilidade.esd_disponibilidade.dsp_status}}</td>
-                  <td> {{demanda.cad_periodicidade.per_descricao}}</td>
-                  <td> {{demanda.cad_fcdfdespesadetalhada}}</td>
+                  <td> {{demanda.ias_cadastrodemanda.cad_codigodemanda}}</td>
+                  <td  style = "text-align:left"> {{demanda.ias_cadastrodemanda.cad_descricao}}</td>
+                  <td> {{demanda.ias_processoaqusicaoservico}}</td>
+                  <td> {{demanda.ias_descricao}}</td>
+                  <td> {{demanda.ias_quantidade}}</td>
+                  <td> {{demanda.ias_valor}}</td>
                 </tr>
             {% endfor %}
             </tbody>

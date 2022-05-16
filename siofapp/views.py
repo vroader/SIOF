@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from siofapp.models import viw_qddfcdf2, TblFcdfplanointernoorcamento, TblCadastrodemandas, TblFcdfremanejamento
+from siofapp.models import viw_qddfcdf2, TblFcdfplanointernoorcamento, TblCadastrodemandas, TblFcdfremanejamento, TblItemaquisicaoservico
 from django.db.models.aggregates import Avg, Sum
 
 # Create your views here.
@@ -35,3 +35,7 @@ def cadastroView(request, cso):
 def remanejamentoView(request):
     remanejamento = TblFcdfremanejamento.objects.all()
     return render(request, 'remanejamento.html', {'remanejamento': remanejamento})
+
+def acompanhamentoView(request):
+    acompanhamento = TblItemaquisicaoservico.objects.all()
+    return render(request, 'acompanhamento.html', {'acompanhamento': acompanhamento})
