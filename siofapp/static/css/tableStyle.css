@@ -1,18 +1,19 @@
 .conteiner{
     display: flex;
 }
+
 table{
   border-collapse: collapse;
   /*border: 2px solid rgb(200,200,200);*/
   letter-spacing: 0px;
   font-size: 0.8rem;
-  height: 500px;
+  height: 450px;
 }
 
 td, th {
   border: 1px solid rgb(190,190,190);
   padding: 1px 1px;
-  font-family: calibri
+  font-family: calibri;
 }
 
 th {

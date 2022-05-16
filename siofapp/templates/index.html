@@ -6,12 +6,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Sistema de Orçamento e Finanças </title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
     <link rel="stylesheet" href="{% static 'css/tableStyle.css' %}">
-</style>
 </head>
 <body>
     <div class="cabecalho">
@@ -19,41 +16,17 @@
           <img src= "{% static 'img/IntranetPMDF.gif' %}" alt = "Intranet PMDF">
         </h1>
     </div>
-    <div class = "conteiner">
-    <div class="navigation">
-       <ul>
-            <li class="list active">
-                <a href="#">
-                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">HOME</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="card-outline"></ion-icon></span>
-                    <span class="title">PIO</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="list-outline"></ion-icon></span>
-                    <span class="title">CONTAS</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="shuffle-outline"></ion-icon></span>
-                    <span class="title">REMANEJAMENTOS</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
-                    <span class="title">ACOMPANHAMENTO</span>
-                </a>
-            </li>
-        </ul>
-    </div>
+    <nav class="menuHorizontal">
+        <ul class="listaMenu">
+            <li class="itemMenu"><a href="/">Quadro de Detalhamento de Despesa</a></li><!-- usado para eliminar o espaço entre os itens da lista no template
+         --><li class="itemMenu"><a href="/cadastro/DPP/">Cadastro de Demandas</a></li><!--
+         --><li class="itemMenu"><a href="/pio/DPP/">Plano Interno de Orçamento</a></li><!--
+         --><li class="itemMenu"><a href="/remanejamento/">Remanejamentos</a></li><!--
+         --><li class="itemMenu"><a href="/Acompanhamento/">Acompanhamento</a></li>
+            <li class="itemMenu"><a href="/admin/"><button>Administração de Dados</button></a></li>
+        </ul><!--
+ --></nav><!--
+ --><div class="conteudo">
     <div id="auxTable">
         <table>
           <thead >
@@ -73,16 +46,16 @@
           <tbody>
           {% for dbs in db %}
             <tr>
-              <td> {{dbs.Ordenador}}</td>
-              <td> {{dbs.Plano}}</td>
+              <td style = "text-align:left"> {{dbs.Ordenador}}</td>
+              <td style = "text-align:left"> {{dbs.Plano}}</td>
               <td> {{dbs.Fonte}}</td>
               <td> {{dbs.Grupo}}</td>
-              <td align="right"> {{dbs.Lei | floatformat:2}}</td>
-              <td align="right"> {{dbs.DotacaoInicial | floatformat:2}}</td>
-              <td align="right"> {{dbs.DotacaoAtual | floatformat:2}}</td>
-              <td align="right"> {{dbs.Empenhado | floatformat:2}}</td>
-              <td align="right"> {{dbs.Liquidado | floatformat:2}}</td>
-              <td align="right"> {{dbs.Pago | floatformat:2}}</td>
+              <td style = "text-align:right"> {{dbs.Lei | floatformat:2}}</td>
+              <td style = "text-align:right"> {{dbs.DotacaoInicial | floatformat:2}}</td>
+              <td style = "text-align:right"> {{dbs.DotacaoAtual | floatformat:2}}</td>
+              <td style = "text-align:right"> {{dbs.Empenhado | floatformat:2}}</td>
+              <td style = "text-align:right"> {{dbs.Liquidado | floatformat:2}}</td>
+              <td style = "text-align:right"> {{dbs.Pago | floatformat:2}}</td>
             </tr>
           {% endfor %}
           </tbody>

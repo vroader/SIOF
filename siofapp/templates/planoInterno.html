@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+{% load l10n %}
+{{ catCso }}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tableStyle.css' %}">
+</head>
+<body>
+    <div class="cabecalho">
+        <h1 class="logo">
+          <img src= "{% static 'img/IntranetPMDF.gif' %}" alt = "Intranet PMDF">
+        </h1>
+    </div>
+    <nav class="menuHorizontal">
+        <ul class="listaMenu">
+            <li class="itemMenu"><a href="/">Quadro de Detalhamento de Despesa</a></li><!-- usado para eliminar o espaço entre os itens da lista no template
+         --><li class="itemMenu"><a href="/cadastro/DPP/">Cadastro de Demandas</a></li><!--
+         --><li class="itemMenu"><a href="/pio/DPP/">Plano Interno de Orçamento</a></li><!--
+         --><li class="itemMenu"><a href="/remanejamento/">Remanejamentos</a></li><!--
+         --><li class="itemMenu"><a href="/Acompanhamento/">Acompanhamento</a></li><!--
+         --><li class="itemMenu"><a href="/admin/"><button>Administração de Dados</button></a></li><!--
+     --></ul><!--
+ --></nav><!--
+ --><div class="conteudo"><!--
+     --><nav class="menuVertical"><!--
+         --><ul style="list-style-type: none" class="listaMenuVertical"><!--
+             --><li class="itemMenuVertical"><a href="/pio/DPP">Pessoal e Ativo e Inativo</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/DPGC/">Saúde e Assistência ao Pessoal</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/DAO/">Odontologia</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/DEC/">Ensino e Pesquisa</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/DPTS/">Materiais, Equipamentos e Serviços de Uso Comum</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/Dinfra/">e Obras e Manutenção Predial e Serviços Gerais</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/Ditel/">Tecnologia da Informação e Comunicações</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/DOP/">Material e Equipamento Operacional Especial</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/CCS/">Cerimonial e Propaganda Institucional</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/DCC/">Materiais e Equipamentos de Uso Correicional e Perícia</a></li><!--
+             --><li class="itemMenuVertical"><a href="/pio/CI/">Inteligência</a></li>
+            </ul>
+        </nav>
+    <div id="auxTable">
+        <div class="conteiner">
+            <a>Unidade Responsável: {{ cso }} Orçamento anual:R$ {{ somaCso | floatformat:2 }}</a>
+            <!--<h6 style = "align:right">{{ somaCso | floatformat:2 }}</h6>   joguei a soma dos valores para a linha de cima porque o style não funciona-->
+        </div>
+        <table>
+            <thead >
+                <tr>
+                  <th>Código:</th>
+                  <th>Demanda:</th>
+                  <th>Natureza da Despesa:</th>
+                  <th>Quantidade:</th>
+                  <th>Valor:</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for demanda in pioPessoal %}
+                <tr>
+                  <td> {{demanda.pif_cadastrodemanda.cad_codigodemanda}}</td>
+                  <td  style = "text-align:left"> {{demanda.pif_cadastrodemanda.cad_descricao}}</td>
+                  <td> {{demanda.pif_cadastrodemanda.cad_fcdfdespesadetalhada}}</td>
+                  <td> {{demanda.pif_quantidade}}</td>
+                  <td  style = "text-align:right"> {{demanda.pif_valor | floatformat:2}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tbody>
+            {% for demanda in pioCusteio %}
+                <tr>
+                  <td> {{demanda.pif_cadastrodemanda.cad_codigodemanda}}</td>
+                  <td  style = "text-align:left"> {{demanda.pif_cadastrodemanda.cad_descricao}}</td>
+                  <td> {{demanda.pif_cadastrodemanda.cad_fcdfdespesadetalhada}}</td>
+                  <td> {{demanda.pif_quantidade}}</td>
+                  <td  style = "text-align:right"> {{demanda.pif_valor | floatformat:2}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tbody>
+             {% for demanda in pioInvestimento %}
+                <tr>
+                  <td> {{demanda.pif_cadastrodemanda.cad_codigodemanda}}</td>
+                  <td  style = "text-align:left"> {{demanda.pif_cadastrodemanda.cad_descricao}}</td>
+                  <td> {{demanda.pif_cadastrodemanda.cad_fcdfdespesadetalhada}}</td>
+                  <td> {{demanda.pif_quantidade}}</td>
+                  <td  style = "text-align:right"> {{demanda.pif_valor | floatformat:2}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</body>
+</html>

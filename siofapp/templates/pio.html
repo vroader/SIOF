@@ -68,11 +68,11 @@
           <tbody>
           {% for dbs in db %}
             <tr>
-              <td> {{dbs.id_fcdfplanointerno}}</td>
-              <td> {{registro.cad_descricao}}</td>
-              <!--<td> {{dbs.TblCadastrodemandas.cad_fcdfdespesadetalhada}}</td>
-              <td> {{dbs.TblFcdfplanointernoorcamento.pif_quantidade}}</td>-->
-              <td align="right"> {{dbs.pif_valor | floatformat:2}}</td>
+              <td> {{dbs.pif_cadastrodemanda.cad_codigodemanda}}</td>
+              <td  style = "text-align:left"> {{dbs.pif_cadastrodemanda.cad_descricao}}</td>
+              <td> {{dbs.pif_cadastrodemanda.cad_fcdfdespesadetalhada}}</td>
+              <td> {{dbs.pif_quantidade}}</td>
+              <td  style = "text-align:right"> {{dbs.pif_valor | floatformat:2}}</td>
             </tr>
           {% endfor %}
           </tbody>

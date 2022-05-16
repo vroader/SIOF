@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from siofapp.views import home, vpio
+from siofapp.views import home, pioView, cadastroView, remanejamentoView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('pio', vpio),
+    #path('pio', vpio),
+    path('pio/<str:cso>/', pioView, name='planoInterno'),
+    path('cadastro/<str:cso>/', cadastroView, name='cadastro'),
+    path('remanejamento/', remanejamentoView, name='remanejamento')
 ]

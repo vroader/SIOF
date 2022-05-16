@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+{% load l10n %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tableStyle.css' %}">
+</head>
+<body>
+    <div class="cabecalho">
+        <h1 class="logo">
+          <img src= "{% static 'img/IntranetPMDF.gif' %}" alt = "Intranet PMDF">
+        </h1>
+    </div>
+    <nav class="menuHorizontal">
+        <ul class="listaMenu">
+            <li class="itemMenu"><a href="/">Quadro de Detalhamento de Despesa</a></li><!-- usado para eliminar o espaço entre os itens da lista no template
+         --><li class="itemMenu"><a href="/cadastro/DPP/">Cadastro de Demandas</a></li><!--
+         --><li class="itemMenu"><a href="/pio/DPP/">Plano Interno de Orçamento</a></li><!--
+         --><li class="itemMenu"><a href="/remanejamento/">Remanejamentos</a></li><!--
+         --><li class="itemMenu"><a href="/Acompanhamento/">Acompanhamento</a></li><!--
+         --><li class="itemMenu"><a href="/admin/"><button>Administração de Dados</button></a></li><!--
+     --></ul><!--
+ --></nav><!--
+ --><div class="conteudo">
+    <div id="auxTable">
+        <table>
+          <thead >
+            <tr>
+              <th>Data:</th>
+              <th>Remanejamento:</th>
+              <th>Codigo:</th>
+              <th>Demanda:</th>
+              <th>Descrição:</th>
+              <th>Quantidade:</th>
+              <th>Valor:</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for dbs in remanejamento %}
+            <tr>
+              <td style = "text-align:left"> {{dbs.ref_data}}</td>
+              <td style = "text-align:left"> {{dbs.ref_especieremanejamento}}</td>
+              <td style = "text-align:center"> {{dbs.ref_planointerno.id_fcdfplanointerno.cad_codigodemanda}}</td>
+              <td style = "text-align:left"> {{dbs.ref_planointerno.id_fcdfplanointerno.cad_descricao}}</td>
+              <td style = "text-align:left"> {{dbs.ref_descricao}}</td>
+              <td style = "text-align:right"> {{dbs.ref_quantidade}}</td>
+              <td style = "text-align:right"> {{dbs.ref_valor | floatformat:2}}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    </div>
+</body>
+</html>

@@ -30,6 +30,7 @@ body{
     margin: 0 auto;
     position: relative;
  }
+.navi_item
 .navigation{
     position: relative;
     display: inline-block;

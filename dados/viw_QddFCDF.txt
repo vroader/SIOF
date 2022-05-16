@@ -1,0 +1,19 @@
+class viw_qddfcdf2(models.Model):
+    id = models.BigIntegerField(primary_key=True)
+    Emissao = models.DateField(db_column='Emissão')
+    Ano = models.TextField(db_column='Ano')
+    Ordenador= models.CharField(db_column='Ordenador de Despesa', max_length=36, blank=True, null=True)
+    Programa= models.CharField(db_column='Programa de Trabalho', max_length=21, blank=True, null=True)
+    Plano = models.CharField(db_column='Plano Orcamentário', max_length=144, blank=True, null=True)
+    Fonte = models.CharField (db_column='Fonte', max_length=3, blank=True, null=True)
+    Grupo = models.CharField(db_column='Grupo de Despesa', max_length=25, blank=True, null=True)
+    Lei = models.DecimalField(db_column='Lei', max_digits=37, decimal_places=2, blank=True, null=True)
+    DotacaoInicial =models.DecimalField(db_column='Dotação Inicial', max_digits=38, decimal_places=2, blank=True, null=True)
+    DotacaoAtual = models.DecimalField(db_column='Dotação Atual', max_digits=38, decimal_places=2, blank=True, null=True)
+    Empenhado = models.DecimalField(db_column='Empenhado', max_digits=37, decimal_places=2, blank=True, null=True)
+    Liquidado = models.DecimalField(db_column='Liquidado', max_digits=37, decimal_places=2, blank=True, null=True)
+    Pago = models.DecimalField(db_column='Pago', max_digits=37, decimal_places=2, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'viw_qddfcdf2'
