@@ -1,0 +1,69 @@
+<table id="tabela">
+    <thead>
+        <tr class="total">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="valor">{{total.lei|floatformat:2}}</td>
+            <td class="valor">{{total.dotacaoInicial|floatformat:2}}</td>
+            <td class="valor">{{total.dotacaoAtual|floatformat:2}}</td>
+            <td class="valor">{{total.empenhado|floatformat:2}}</td>
+            <td class="valor">{{total.liquidado|floatformat:2}}</tdv>
+            <td class="valor">{{total.pago|floatformat:2}}</td>
+        </tr>
+        <tr class="titulo">
+            <th>&nbsp;</th>
+            <th>Fonte:</th>
+            <th>&nbsp;</th>
+            <th>Grupo de Despesa:</th>
+            <th>Lei:</th>
+            <th>Dotação Inicial:</th>
+            <th>Dotação Atual:</th>
+            <th>Empenhado:</th>
+            <th>Liquidado:</th>
+            <th>Pago:</th>
+        </tr>
+    </thead>
+    </tbody>                    
+    {% for ordenador in totalOrdenador %}
+        <tr class="tr1">
+            <td colspan="4">{{ordenador.Ordenador}}</td>               
+            <td class="valor">{{ordenador.lei|floatformat:2}}</td>
+            <td class="valor">{{ordenador.dotacaoInicial|floatformat:2}}</td>
+            <td class="valor">{{ordenador.dotacaoAtual|floatformat:2}}</td>
+            <td class="valor">{{ordenador.empenhado|floatformat:2}}</td>
+            <td class="valor">{{ordenador.liquidado|floatformat:2}}</td>
+            <td class="valor">{{ordenador.pago|floatformat:2}}</td>
+        </tr>
+    {% for fonte in totalOrdenadorFonte %}
+    {% if fonte.Ordenador == ordenador.Ordenador %}
+        <tr class="tr2">
+            <td>&nbsp;</td>
+            <td colspan="3">{{fonte.Fonte}}</td>
+            <td class="valor">{{fonte.lei|floatformat:2}}</td>
+            <td class="valor">{{fonte.dotacaoInicial|floatformat:2}}</td>
+            <td class="valor">{{fonte.dotacaoAtual|floatformat:2}}</td>
+            <td class="valor">{{fonte.empenhado|floatformat:2}}</td>
+            <td class="valor">{{fonte.liquidado|floatformat:2}}</td>
+            <td class="valor">{{fonte.pago|floatformat:2}}</td>
+        </tr>
+    {% for grupo in totalOrdenadorFonteGrupo %}
+    {% if grupo.Ordenador == fonte.Ordenador and grupo.Fonte == fonte.Fonte %}    
+        <tr class="tr3">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>{{grupo.Grupo}}</td>
+            <td class="valor">{{grupo.lei|floatformat:2}}</td>
+            <td class="valor">{{grupo.dotacaoInicial|floatformat:2}}</td>
+            <td class="valor">{{grupo.dotacaoAtual|floatformat:2}}</td>
+            <td class="valor">{{grupo.empenhado|floatformat:2}}</td>
+            <td class="valor">{{grupo.liquidado|floatformat:2}}</td>
+            <td class="valor">{{grupo.pago|floatformat:2}}</td>
+        </tr>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}

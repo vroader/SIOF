@@ -1,41 +1,50 @@
-.conteiner{
-    display: flex;
+table{    
+    font-family: "Calibri";
+    font-size: 12px;
+    margin: 20px;
+    border-collapse:collapse; 
+}
+.total{    
+    font-weight: bold;                 
 }
 
-table{
-  border-collapse: collapse;
-  /*border: 2px solid rgb(200,200,200);*/
-  letter-spacing: 0px;
-  font-size: 0.8rem;
-  height: 450px;
+td:first-of-type{
+    width: 10px;
+    padding-left: 5px;
+}
+td:last-of-type{
+    padding-right: 5px;
+}
+.titulo{
+    font-family: 'Calibri';
+    font-weight: bolder;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-top-style: double;      
+}
+.tr1{
+    font-weight: bold;
+    background-color: rgb(184 204 228);
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.tr2{
+    font-weight:bolder;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
-td, th {
-  border: 1px solid rgb(190,190,190);
-  padding: 1px 1px;
-  font-family: calibri;
+.tr3:nth-child(odd) {
+    background-color: rgb(219 229 241)
 }
 
-th {
-  background-color: rgb(235,235,235);
+.tr3:nth-child(even) {
+    background-color: white;
 }
 
-td {
-  text-align: center;
-}
-
-tr:nth-child(even) td {
-  background-color: rgb(250,250,250);
-}
-
-tr:nth-child(odd) td {
-  background-color: rgb(245,245,245);
-}
-
-caption {
-  padding: 10px;
-}
-
-#auxTable{
-    float: right;
+.valor{
+    padding-left: 10px;
+    text-align: right;
+    font-style: italic;
 }

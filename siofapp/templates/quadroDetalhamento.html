@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+{% load l10n %}
+{% load custom_filter_tag %}
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Orçamento e Finanças</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tableStyle.css' %}">
+</head>
+<body>
+    <div class="cabecalho">
+        <img class= "rosacea" src= "{% static 'img/RIV_PMDF_2017_Marca_PMDF_vertical_colorida.png' %}" alt = "PMDF">
+        <h1 class="sistema">
+          SISTEMA DE ORÇAMENTO E FINANÇAS
+        </h1>
+    </div>
+    <nav class="menuHorizontal">
+        <ul class="listaMenu">
+            <li class="itemMenu" style="background-color: #245b93 ;"><a href="/">Quadro de Detalhamento de Despesa</a></li>
+            <li class="itemMenu"><a href="/pio/DPP/">Plano Interno de Orçamento</a></li>
+             <li class="itemMenu"><a href="/acompanhamento/">Acompanhamento</a></li>            
+            <li class="itemMenu"><a href="/cadastro/DPP/">Cadastro de Demandas</a></li>           
+            <li class="itemMenu"><a href="/remanejamento/">Remanejamentos</a></li>            
+        </ul>
+        <a href="/admin/"><button class="btnMenu">Administração de Dados</button></a>
+    </nav>
+    <div class="corpo">
+        <nav class="menuVertical">
+            <ul style="list-style-type: none" class="listaMenuVertical">
+                <li class="itemMenuVertical" style="background-color: #245b93 ;"><a href="">Fundo Constitucional</a></li>
+                <li class="itemMenuVertical" ><a href="{% url 'GDF' %}">Tesouro Local</a></li>                
+            </ul>
+        </nav>
+        <div id="parent">
+            <table id="child">
+                <thead>
+                    <tr class="total">
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="valor">{{total.lei|floatformat:2}}</td>
+                        <td class="valor">{{total.dotacaoInicial|floatformat:2}}</td>
+                        <td class="valor">{{total.dotacaoAtual|floatformat:2}}</td>
+                        <td class="valor">{{total.empenhado|floatformat:2}}</td>
+                        <td class="valor">{{total.liquidado|floatformat:2}}</tdv>
+                        <td class="valor">{{total.pago|floatformat:2}}</td>
+                    </tr>
+                    <tr class="titulo">
+                        <th>&nbsp;</th>
+                        <th>Fonte:</th>
+                        <th>&nbsp;</th>
+                        <th>Grupo de Despesa:</th>
+                        <th>Lei:</th>
+                        <th>Dotação Inicial:</th>
+                        <th>Dotação Atual:</th>
+                        <th>Empenhado:</th>
+                        <th>Liquidado:</th>
+                        <th>Pago:</th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                {% for ordenador in totalOrdenador %}
+                    <tr class="tr1">
+                        <td colspan="4">{{ordenador.Ordenador}}</td>               
+                        <td class="valor">{{ordenador.lei|floatformat:2}}</td>
+                        <td class="valor">{{ordenador.dotacaoInicial|floatformat:2}}</td>
+                        <td class="valor">{{ordenador.dotacaoAtual|floatformat:2}}</td>
+                        <td class="valor">{{ordenador.empenhado|floatformat:2}}</td>
+                        <td class="valor">{{ordenador.liquidado|floatformat:2}}</td>
+                        <td class="valor">{{ordenador.pago|floatformat:2}}</td>
+                    </tr>
+                {% for fonte in totalOrdenadorFonte %}
+                {% if fonte.Ordenador == ordenador.Ordenador %}
+                    <tr class="tr2">
+                        <td>&nbsp;</td>
+                        <td colspan="3">{{fonte.Fonte}}</td>
+                        <td class="valor">{{fonte.lei|floatformat:2}}</td>
+                        <td class="valor">{{fonte.dotacaoInicial|floatformat:2}}</td>
+                        <td class="valor">{{fonte.dotacaoAtual|floatformat:2}}</td>
+                        <td class="valor">{{fonte.empenhado|floatformat:2}}</td>
+                        <td class="valor">{{fonte.liquidado|floatformat:2}}</td>
+                        <td class="valor">{{fonte.pago|floatformat:2}}</td>
+                    </tr>
+                {% for grupo in totalOrdenadorFonteGrupo %}
+                {% if grupo.Ordenador == fonte.Ordenador and grupo.Fonte == fonte.Fonte %}    
+                    <tr class="tr3">
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>{{grupo.Grupo}}</td>
+                        <td class="valor">{{grupo.lei|floatformat:2}}</td>
+                        <td class="valor">{{grupo.dotacaoInicial|floatformat:2}}</td>
+                        <td class="valor">{{grupo.dotacaoAtual|floatformat:2}}</td>
+                        <td class="valor">{{grupo.empenhado|floatformat:2}}</td>
+                        <td class="valor">{{grupo.liquidado|floatformat:2}}</td>
+                        <td class="valor">{{grupo.pago|floatformat:2}}</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>            
+        </div>    
+    </div>    
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

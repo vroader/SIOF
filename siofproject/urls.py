@@ -14,15 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from siofapp.views import home, pioView, cadastroView, remanejamentoView, acompanhamentoView
+from django.urls import path, include
+from siofapp.views import home #, pioView, cadastroView, remanejamentoView, acompanhamentoView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    #path('pio', vpio),
-    path('pio/<str:cso>/', pioView, name='planoInterno'),
-    path('cadastro/<str:cso>/', cadastroView, name='cadastro'),
-    path('remanejamento/', remanejamentoView, name='remanejamento'),
-    path('acompanhamento/', acompanhamentoView, name='acompanhamento'),
+  
+    #
+    #path('cadastro/<str:cso>/', cadastroView, name='cadastro'),
+    #path('remanejamento/', remanejamentoView, name='remanejamento'),
+    #path('acompanhamento/', acompanhamentoView, name='acompanhamento'),
+    #path('quadro', quadroDetalhamento, name='quadro'),
+    #path('quadro', quadroDetalhamentoGDF, name='quadroGDF'),
+    path('quadro/', include("siofapp.siofapp_urls")),
+    path('pio/', include("siofapp.siofapp_urls")),
 ]

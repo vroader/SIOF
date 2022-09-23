@@ -1,6 +1,12 @@
-
-django
+asgiref==3.5.0
+backports.zoneinfo==0.2.1
+Django==4.0.3
+greenlet==1.1.2
+mysql-connector-python==8.0.28
 mysqlclient==2.0.1
-mysql-connector-python
-pymysql
-
+Pillow==9.1.0
+protobuf==3.20.0
+PyMySQL==1.0.2
+SQLAlchemy==1.4.35
+sqlparse==0.4.2
+tzdata==2022.1
