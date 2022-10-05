@@ -5,7 +5,17 @@
 #   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
+from email.policy import default
+import re
+from tabnanny import verbose
+#from termios import VERASE
+from turtle import ondrag
+from unicodedata import decimal
+from unittest.util import _MAX_LENGTH
+from xmlrpc.client import TRANSPORT_ERROR
 from django.db import models
+from numpy import blackman
+from sqlalchemy import column, null, true
 
 
 class AuthGroup(models.Model):
@@ -143,16 +153,18 @@ class TblCadastrodemandas(models.Model):
     cad_periodicidade = models.ForeignKey('TblPeriodicidade', models.DO_NOTHING, db_column='cad_Periodicidade', blank=True, null=True)  # Field name made lowercase.
     cad_especiedisponibilidade = models.ForeignKey('TblEspeciedisponibilidade', models.DO_NOTHING, db_column='cad_EspecieDisponibilidade', blank=True, null=True)  # Field name made lowercase.
     cad_observacao = models.CharField(db_column='cad_Observacao', max_length=1000, db_collation='utf8mb4_general_ci', blank=True, null=True)  # Field name made lowercase.
-    cad_datainclusao = models.DateField(db_column='cad_DataInclusao', blank=True, null=True)  # Field name made lowercase.
-    cad_status = models.IntegerField(db_column='cad_Status', blank=True, null=True)  # Field name made lowercase.
+    cad_datainclusao = models.DateField( db_column='cad_DataInclusao', blank=True, null=True)  # Field name made lowercase.
+    cad_status = models.ForeignKey('TblStatus', db_column='cad_Status', on_delete= models.DO_NOTHING,  blank=True, null=True)  # Field name made lowercase.
     cad_especiedespesa = models.CharField(db_column='cad_EspecieDespesa', max_length=2500, db_collation='utf8mb4_general_ci', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'tbl_cadastrodemandas'
+        verbose_name_plural = 'Cadastro de Demandas'
 
     def __str__(self):
-        return str(self.id_cadastrodemandas)   
+        self.id_cadastrodemandas
+        return "{} - {}".format(self.cad_codigodemanda, self.cad_descricao)
 
 
 class TblCoordenadoressetoriais(models.Model):
@@ -160,13 +172,26 @@ class TblCoordenadoressetoriais(models.Model):
     cso_nome = models.CharField(db_column='cso_Nome', max_length=255, db_collation='utf8mb4_general_ci')  # Field name made lowercase.
     cso_areatematica = models.CharField(db_column='cso_AreaTematica', max_length=255, db_collation='utf8mb4_general_ci', blank=True, null=True)  # Field name made lowercase.
     cso_datainclusao = models.DateField(db_column='cso_DataInclusao', blank=True, null=True)  # Field name made lowercase.
-    cso_status = models.IntegerField(db_column='cso_Status', blank=True, null=True)  # Field name made lowercase.
+    cso_status = models.ForeignKey('TblStatus', on_delete=models.DO_NOTHING ,db_column='cso_Status', blank=True, null=True)  # Field name made lowercase.
     cso_instrumentolegal = models.CharField(db_column='cso_InstrumentoLegal', max_length=255, db_collation='utf8mb4_general_ci', blank=True, null=True)  # Field name made lowercase.
     cso_ordenadordespesa = models.CharField(db_column='cso_OrdenadorDespesa', max_length=11, db_collation='utf8mb4_general_ci', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'tbl_coordenadoressetoriais'
+        verbose_name_plural = 'Coordenadores Setoriais'
+
+    @property   # Propriedade criada para restringir a lista de filtro apenas aos CSO's ativos não funcionaou
+    def coordeanadoresAtivos (self):
+        if self.cso_status == 1:
+            return self.cso_nome
+
+    def __str__(self):
+        return "{} - {}".format(self.cso_codigo, self.cso_areatematica)
+
+    def __repr__(self):
+        return str(self)
+       
 
 
 class TblDisponibilidade(models.Model):
@@ -176,6 +201,11 @@ class TblDisponibilidade(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_disponibilidade'
+        verbose_name_plural = 'Disponibilidade'
+
+    def __str__(self):
+        self.id_disponibilidade
+        return self.dsp_status
 
 
 class TblEspeciedisponibilidade(models.Model):
@@ -186,6 +216,11 @@ class TblEspeciedisponibilidade(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_especiedisponibilidade'
+        verbose_name_plural = 'Especie de Disponibilidade'
+
+    def __str__(self):
+        self.id_especiedisponibilidade
+        return '{} - {}'.format(self.esd_disponibilidade, self.esd_discriminacao)
 
 
 class TblEstrategia(models.Model):
@@ -223,6 +258,10 @@ class TblFcdfempenho(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_fcdfempenho'
+        verbose_name_plural = 'Empenhos SIAFI'
+    
+    def __str__ (self):
+        return "{} - {}".format(self.emf_codigo, self.emf_descricao)
 
 
 class TblFcdfitemempenho(models.Model):
@@ -239,6 +278,10 @@ class TblFcdfitemempenho(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_fcdfitemempenho'
+        verbose_name_plural = 'Item de Empenho SIAFI'
+    
+    def __str__(self):
+        return '{} - {}'.format(self.id_fcdfitemempenho, self.itf_descricao)
 
 
 class TblFcdfitemliquidacao(models.Model):
@@ -275,11 +318,15 @@ class TblFcdfnaturezadespesadetalhada(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_fcdfnaturezadespesadetalhada'
+        verbose_name_plural = 'FCDF - Natureza da Despesa Detalhada'
+    
+    def __str__ (self):
+        return '{} - {}'.format(self.nfc_codigo, self.nfc_descricao)
 
 
 class TblFcdfplanointernoorcamento(models.Model):
     id_fcdfplanointerno = models.AutoField(db_column='Id_FCDFPlanoInterno', primary_key=True)  # Field name made lowercase.
-    pif_cadastrodemanda = models.ForeignKey(TblCadastrodemandas, models.DO_NOTHING, db_column='pif_CadastroDemanda')  # Field name made lowercase.
+    pif_cadastrodemanda = models.ForeignKey(TblCadastrodemandas, on_delete= models.DO_NOTHING, db_column='pif_CadastroDemanda')  # Field name made lowercase.
     pif_justificativa = models.CharField(db_column='pif_Justificativa', max_length=255, blank=True, null=True)  # Field name made lowercase.
     pif_fonte = models.CharField(db_column='pif_Fonte', max_length=3, blank=True, null=True)  # Field name made lowercase.
     pif_programatrabalho = models.CharField(db_column='pif_ProgramaTrabalho', max_length=21, blank=True, null=True)  # Field name made lowercase.
@@ -292,7 +339,13 @@ class TblFcdfplanointernoorcamento(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_fcdfplanointernoorcamento'
-
+        verbose_name_plural = 'Plano Interno de Orcamento - FCDF'
+    
+    def __str__ (self):
+        self.id_fcdfplanointerno
+        return '{} - {}'.format(self.pif_cadastrodemanda, self.pif_exercicio)
+        
+    
 
 class TblFcdfproposta(models.Model):
     id_fcdfproposta = models.AutoField(db_column='Id_FCDFProposta', primary_key=True)  # Field name made lowercase.
@@ -330,7 +383,7 @@ class TblFcdfquadrodetalhamentodespesa(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'tbl_fcdfquadrodetalhamentodespesa'
+        db_table = 'tbl_fcdfquadrodetalhamentodespesa'                
 
 
 class TblFcdfremanejamento(models.Model):
@@ -345,6 +398,33 @@ class TblFcdfremanejamento(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_fcdfremanejamento'
+        verbose_name_plural = 'Remanejamentos - FCDF'
+
+    def __str__ (self):
+        self.id_fcdfremanejamentos
+        return '{} - {}'.format(self.ref_especieremanejamento, self.ref_planointerno)
+
+class TblGdfcreditosorcamentarios(models.Model):
+    id_gdfcreditosorcamentarios = models.AutoField(db_column='id_GdfCreditosOrcamentarios', primary_key=True)
+    cog_exercicio = models.TextField(db_column='cog_Exercicio', blank=True, null=True, max_length=5)       
+    cog_unidadeorcamentaria = models.CharField(db_column='cog_UnidadeOrcamentaria', max_length=5, blank=True, null=True)
+    cog_dataatualizacao = models.DateField(db_column='cog_DataAtualizacao')
+    cog_esfera = models.CharField(db_column= 'cog_Esfera', blank=True, null=True, max_length=1)
+    cog_programa = models.CharField(db_column='cog_Programa', blank=True, null=True, max_length=21)
+    cog_naturezadespesa = models.CharField(db_column='cog_NaturezaDespesa', blank=True, null=True, max_length=8)
+    cog_fonte = models.CharField(db_column='cog_Fonte', blank=True, null=True, max_length=9)
+    cog_identificadoruso = models.CharField(db_column = 'cog_IdentificadorUso', null=True, blank=True, max_length=4)
+    cog_lei= models.DecimalField(db_column='cog_lei',max_digits=15, decimal_places=2, blank=True, null=True)
+    cog_alteracao = models.DecimalField(db_column='cog_Alteracao', max_digits=15, decimal_places=2, blank=True, null=True)
+
+    class Meta:
+        managed=False
+        db_table = 'tbl_gdfcreditosorcamentarios'
+        verbose_name_plural = 'Créditos Orçamentários'
+
+    def __str__(self):
+        str(self.id_gdfcreditosorcamentarios)
+        return '{} {} {} {} {} {}'.format(str(self.cog_exercicio), str(self.cog_unidadeorcamentaria), str(self.cog_programa), str(self.cog_naturezadespesa), str(self.cog_fonte), str(self.cog_identificadoruso) )
 
 
 class TblGdfempenho(models.Model):
@@ -359,6 +439,10 @@ class TblGdfempenho(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_gdfempenho'
+        verbose_name_plural = 'Empenhos GDF'
+
+    def __str__(self):
+        return '{} - {}'.format(self.emg_codigo, self.emg_descricao)
 
 
 class TblGdfitemempenho(models.Model):
@@ -409,16 +493,24 @@ class TblGdfnaturezadespesadetalhada(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_gdfnaturezadespesadetalhada'
+        verbose_name_plural = 'Natureza da Despesa Detalhada - GDF'
+
+    def __str__ (self):
+        return '{} - {}'.format(self.ndf_codigo, self.ndf_descricao)
 
 
 class TblGdfpiocreditosorcamentarios(models.Model):
-    id_gdfpiocreditosorcamentarios = models.IntegerField(db_column='Id_GDFPIOCreditosOrcamentarios', primary_key=True)  # Field name made lowercase.
+    id_gdfpiocreditosorcamentarios = models.AutoField(db_column='Id_GDFPIOCreditosOrcamentarios', primary_key=True)  # Field name made lowercase.
     cog_gdfplanointernoorcamento = models.ForeignKey('TblGdfplanointernoorcamento', models.DO_NOTHING, db_column='cog_GDFPlanoInternoOrcamento')  # Field name made lowercase.
-    cog_gdfquadrodetalhamentodespesa = models.ForeignKey('TblGdfquadrodetalhamentodespesa', models.DO_NOTHING, db_column='cog_GDFQuadroDetalhamentoDespesa')  # Field name made lowercase.
+    cog_gdfcreditosorcamentarios = models.ForeignKey('TblGdfcreditosorcamentarios', models.DO_NOTHING, db_column='cog_GDFCreditosOrcamentarios')  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'tbl_gdfpiocreditosorcamentarios'
+
+    def __str__ (self):
+        str(self.id_gdfpiocreditosorcamentarios)
+        return str(self.cog_gdfplanointernoorcamento), str(self.cog_gdfcreditosorcamentarios)
 
 
 class TblGdfplanointernoorcamento(models.Model):
@@ -426,14 +518,21 @@ class TblGdfplanointernoorcamento(models.Model):
     pig_cadastrodemanda = models.ForeignKey(TblCadastrodemandas, models.DO_NOTHING, db_column='pig_CadastroDemanda')  # Field name made lowercase.
     pig_quantidade = models.IntegerField(db_column='pig_Quantidade', blank=True, null=True)  # Field name made lowercase.
     pig_valor = models.DecimalField(db_column='pig_Valor', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
+    pig_exercicio =  models.TextField(db_column='pig_Exercicio', blank=True, null=True)
     pig_data = models.DateField(db_column='pig_Data')  # Field name made lowercase.
     pig_observacoes = models.CharField(db_column='pig_Observacoes', max_length=1000, blank=True, null=True)  # Field name made lowercase.
-
+    pig_creditos = models.ManyToManyField(TblGdfcreditosorcamentarios, through=TblGdfpiocreditosorcamentarios, blank=true)
+    
     class Meta:
         managed = False
         db_table = 'tbl_gdfplanointernoorcamento'
+        verbose_name_plural = 'Plano Interno de Orçamento - GDF'
 
+    def __str__ (self):
+        str(self.id_gdfplanointernoorcamento), str(self.pig_creditos)
+        return '{} - {}'.format(str(self.pig_cadastrodemanda), str(self.pig_data))
 
+    
 class TblGdfproposta(models.Model):
     id_gdfproposta = models.AutoField(db_column='Id_GDFProposta', primary_key=True)  # Field name made lowercase.
     prg_cadastrodemada = models.ForeignKey(TblCadastrodemandas, models.DO_NOTHING, db_column='prg_CadastroDemada')  # Field name made lowercase.
@@ -517,7 +616,11 @@ class TblItemaquisicaoservico(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_itemaquisicaoservico'
+        verbose_name_plural = 'Item de Aquisição ou Serviço'
 
+    def __str__ (self):
+        self.id_itemaqusicaoservico
+        return str(self.ias_processoaqusicaoservico)
 
 class TblObjetivo(models.Model):
     id_objetivo = models.AutoField(db_column='Id_Objetivo', primary_key=True)  # Field name made lowercase.
@@ -538,6 +641,11 @@ class TblPeriodicidade(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_periodicidade'
+        verbose_name_plural = 'Periodicidade'
+    
+    def __str__ (self):
+        self.id_periodicidade
+        return self.per_descricao
 
 
 class TblPlanointernoorcamento(models.Model):
@@ -582,6 +690,10 @@ class TblProcessoaquisicaoservico(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_processoaquisicaoservico'
+        verbose_name_plural = 'Processos de Aquisição e Contratação de Serviços'
+
+    def __str__ (self):
+        return '{} - {}'.format(self.id_processoaquisicaoservico, self.pas_descricao)
 
 
 class TblProdutounidade(models.Model):
@@ -592,6 +704,10 @@ class TblProdutounidade(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_produtounidade'
+        verbose_name_plural = 'Produto/Unidade'
+    
+    def __str__(self):
+        return '{} / {}'.format(self.pdu_especificacao, self.pdu_unidademedida)
 
 
 class TblPropostasetorial(models.Model):
@@ -609,6 +725,19 @@ class TblPropostasetorial(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_propostasetorial'
+
+class TblStatus (models.Model):
+    id_status = models.IntegerField(db_column='id_Status', primary_key=True) 
+    sta_descricao = models.CharField(db_column='sta_descricao', max_length=7)
+
+    class Meta:
+        managed = True
+        db_table = 'tbl_status'
+        verbose_name_plural = 'Status'
+
+    def __str__(self):
+        self.id_status
+        return self.sta_descricao
 
 class viw_qddfcdf2(models.Model):
     id = models.BigIntegerField(primary_key=True)
