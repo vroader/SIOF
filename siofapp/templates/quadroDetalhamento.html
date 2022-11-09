@@ -19,8 +19,8 @@
     </div>
     <nav class="menuHorizontal">
         <ul class="listaMenu">
-            <li class="itemMenu" style="background-color: #245b93 ;"><a href="/">Quadro de Detalhamento de Despesa</a></li>
-            <li class="itemMenu"><a href="/pio/DPP/">Plano Interno de Orçamento</a></li>
+            <li class="itemMenu" style="background-color: #245b93 ;"><a href="">Quadro de Detalhamento de Despesa</a></li>
+            <li class="itemMenu"><a href="{% url 'planoInterno' cso='DPP' %}">Plano Interno de Orçamento</a></li>
              <li class="itemMenu"><a href="/acompanhamento/">Acompanhamento</a></li>            
             <li class="itemMenu"><a href="/cadastro/DPP/">Cadastro de Demandas</a></li>           
             <li class="itemMenu"><a href="/remanejamento/">Remanejamentos</a></li>            
@@ -31,7 +31,7 @@
         <nav class="menuVertical">
             <ul style="list-style-type: none" class="listaMenuVertical">
                 <li class="itemMenuVertical" style="background-color: #245b93 ;"><a href="">Fundo Constitucional</a></li>
-                <li class="itemMenuVertical" ><a href="{% url 'GDF' %}">Tesouro Local</a></li>                
+                <li class="itemMenuVertical" ><a href="{% url 'quadroGDF' %}">Tesouro Local</a></li>                
             </ul>
         </nav>
         <div id="parent">

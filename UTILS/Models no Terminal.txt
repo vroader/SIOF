@@ -1,0 +1,11 @@
+Para acessar as classes do models.py no terminal.
+
+01 - entre na pasta do projeto
+02 - execute o comando "python manage.py shell"
+03 - O terminal vai abrir o shell python.
+04 - Com o shell aberto execute "import os"
+05 - execute o comando "os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nomedapastadoprojeto_model.settings')" # no caso o nome da pasta do projeto e siof
+06 - o terminal vai exibir 'nomedoprojeto.settings', no caso 'siofproject.settings'
+07 - execute "import django"
+08 - execute "django.setup()"
+09 - execute "from nomedoaplicativo.models import nomedasclasses" no caso "from siofapp.models import ...."

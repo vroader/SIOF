@@ -14,8 +14,11 @@ from unicodedata import decimal
 from unittest.util import _MAX_LENGTH
 from xmlrpc.client import TRANSPORT_ERROR
 from django.db import models
-from numpy import blackman
+#from numpy import blackman
 from sqlalchemy import column, null, true
+import os
+#from enumchoicefield import ChoiceEnum, EnumChoiceField
+from django.utils import timezone
 
 
 class AuthGroup(models.Model):
@@ -164,7 +167,7 @@ class TblCadastrodemandas(models.Model):
 
     def __str__(self):
         self.id_cadastrodemandas
-        return "{} - {}".format(self.cad_codigodemanda, self.cad_descricao)
+        return "{} - {}".format(str(self.cad_codigodemanda), str(self.cad_descricao))
 
 
 class TblCoordenadoressetoriais(models.Model):
@@ -428,13 +431,13 @@ class TblGdfcreditosorcamentarios(models.Model):
 
 
 class TblGdfempenho(models.Model):
-    emg_codigo = models.CharField(db_column='emg_Codigo', primary_key=True, max_length=23)  # Field name made lowercase.
-    emg_descricao = models.CharField(db_column='emg_Descricao', max_length=1000)  # Field name made lowercase.
-    emg_numeroprocesso = models.CharField(db_column='emg_NumeroProcesso', max_length=24)  # Field name made lowercase.
-    emg_dataemissao = models.DateField(db_column='emg_DataEmissao')  # Field name made lowercase.
-    emg_esfera = models.CharField(db_column='emg_Esfera', max_length=23)  # Field name made lowercase.
-    emg_fonte = models.CharField(db_column='emg_Fonte', max_length=10)  # Field name made lowercase.
-    emg_programatrabalhoresumido = models.CharField(db_column='emg_ProgramaTrabalhoResumido', max_length=17)  # Field name made lowercase.
+    emg_codigo = models.CharField(db_column='emg_Codigo', verbose_name= 'Nota de Empenho', primary_key=True, max_length=23)  # Field name made lowercase.
+    emg_descricao = models.CharField(db_column='emg_Descricao', verbose_name= 'Descrição', max_length=1000)  # Field name made lowercase.
+    emg_numeroprocesso = models.CharField(db_column='emg_NumeroProcesso', verbose_name= 'Numero do Processo', max_length=24)  # Field name made lowercase.
+    emg_dataemissao = models.DateField(db_column='emg_DataEmissao', verbose_name= 'Emissão')  # Field name made lowercase.
+    emg_esfera = models.CharField(db_column='emg_Esfera', max_length=23, verbose_name= 'Esfera')  # Field name made lowercase.
+    emg_fonte = models.CharField(db_column='emg_Fonte', verbose_name= 'Fonte', max_length=10)  # Field name made lowercase.
+    emg_programatrabalhoresumido = models.CharField(db_column='emg_ProgramaTrabalhoResumido', verbose_name='Programa de Trabalho', max_length=17)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -446,10 +449,14 @@ class TblGdfempenho(models.Model):
 
 
 class TblGdfitemempenho(models.Model):
+    ORIGINAL = '1'
+    CANCELAMENTO = '2'
+    REFORCO = '3'
+    opcoes = [(ORIGINAL, 'Empenho Original'), (CANCELAMENTO, 'Cancelamento de Empenho'), (REFORCO, 'Reforço de Empenho')]
     id_gdfitemempenho = models.AutoField(db_column='Id_GDFItemEmpenho', primary_key=True)  # Field name made lowercase.
     itg_itemaquisicaoservico = models.ForeignKey('TblItemaquisicaoservico', models.DO_NOTHING, db_column='itg_ItemAquisicaoServico')  # Field name made lowercase.
     itg_descricao = models.CharField(db_column='itg_Descricao', max_length=100)  # Field name made lowercase.
-    itg_operacao = models.CharField(db_column='itg_Operacao', max_length=50)  # Field name made lowercase.
+    itg_operacao = models.CharField(db_column='itg_Operacao', choices=opcoes, max_length=2)  # Field name made lowercase.
     itg_quantidade = models.DecimalField(db_column='itg_Quantidade', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
     itg_valor = models.DecimalField(db_column='itg_Valor', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
     itg_data = models.DateField(db_column='itg_Data', blank=True, null=True)  # Field name made lowercase.
@@ -500,36 +507,46 @@ class TblGdfnaturezadespesadetalhada(models.Model):
 
 
 class TblGdfpiocreditosorcamentarios(models.Model):
+    PORTARIA = "Port"
+    SUPLEMENTACAO = "Supl"
+    CANCELAMENTO = "Canc"
+    opcoes = [(PORTARIA, 'Portaria'), (SUPLEMENTACAO, 'Suplementação'), (CANCELAMENTO, 'Cancelamento')]
     id_gdfpiocreditosorcamentarios = models.AutoField(db_column='Id_GDFPIOCreditosOrcamentarios', primary_key=True)  # Field name made lowercase.
-    cog_gdfplanointernoorcamento = models.ForeignKey('TblGdfplanointernoorcamento', models.DO_NOTHING, db_column='cog_GDFPlanoInternoOrcamento')  # Field name made lowercase.
-    cog_gdfcreditosorcamentarios = models.ForeignKey('TblGdfcreditosorcamentarios', models.DO_NOTHING, db_column='cog_GDFCreditosOrcamentarios')  # Field name made lowercase.
-
+    pcg_planointernoorcamento = models.ForeignKey('TblGdfplanointernoorcamento', verbose_name= 'Despesa', on_delete=models.DO_NOTHING, db_column='pcg_PlanoInternoOrcamento', related_name='pioGDF')  # Field name made lowercase.
+    pcg_creditosorcamentarios = models.ForeignKey('TblGdfcreditosorcamentarios', verbose_name= 'Credito', on_delete=models.DO_NOTHING, db_column='pcg_CreditosOrcamentarios')  # Field name made lowercase.
+    pcg_descricao = models.CharField(db_column= 'pcg_Descricao', verbose_name='Descrição', max_length=1000, blank=True, null=True)
+    pcg_especie = models.CharField(db_column='pcg_Especie', choices=opcoes,max_length=4, verbose_name='Especie de Crédito', default=PORTARIA)
+    pcg_quantidade = models.IntegerField(db_column='pcg_Quantidade', verbose_name='Quantidade', null=True, blank=True)
+    pcg_valor = models.DecimalField(db_column='pcg_Valor', verbose_name='Valor', max_digits=15, decimal_places=2, blank=True, null=True)
+    pcg_data = models.DateField(db_column='pcg_Data', verbose_name='Data do Lançamento', default=timezone.now)
+    
     class Meta:
         managed = False
         db_table = 'tbl_gdfpiocreditosorcamentarios'
+        verbose_name_plural = 'Alocação de Créditos - GDF'
 
     def __str__ (self):
         str(self.id_gdfpiocreditosorcamentarios)
-        return str(self.cog_gdfplanointernoorcamento), str(self.cog_gdfcreditosorcamentarios)
+        return '{} - {}'.format(str(self.pcg_planointernoorcamento), str(self.pcg_creditosorcamentarios))
 
 
-class TblGdfplanointernoorcamento(models.Model):
+class TblGdfplanointernoorcamento (models.Model):
     id_gdfplanointernoorcamento = models.AutoField(db_column='Id_GDFPlanoInternoOrcamento', primary_key=True)  # Field name made lowercase.
-    pig_cadastrodemanda = models.ForeignKey(TblCadastrodemandas, models.DO_NOTHING, db_column='pig_CadastroDemanda')  # Field name made lowercase.
-    pig_quantidade = models.IntegerField(db_column='pig_Quantidade', blank=True, null=True)  # Field name made lowercase.
+    pig_cadastrodemanda = models.ForeignKey(TblCadastrodemandas, verbose_name = 'Cadastro', on_delete= models.DO_NOTHING, db_column='pig_CadastroDemanda')  # Field name made lowercase.
+    pig_quantidade = models.IntegerField(db_column='pig_Quantidade', verbose_name = 'Quantidade', blank=True, null=True)  # Field name made lowercase.
     pig_valor = models.DecimalField(db_column='pig_Valor', max_digits=15, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
     pig_exercicio =  models.TextField(db_column='pig_Exercicio', blank=True, null=True)
     pig_data = models.DateField(db_column='pig_Data')  # Field name made lowercase.
     pig_observacoes = models.CharField(db_column='pig_Observacoes', max_length=1000, blank=True, null=True)  # Field name made lowercase.
-    pig_creditos = models.ManyToManyField(TblGdfcreditosorcamentarios, through=TblGdfpiocreditosorcamentarios, blank=true)
-    
+    pig_creditos = models.ManyToManyField(TblGdfcreditosorcamentarios, related_name= 'credito', through=TblGdfpiocreditosorcamentarios, blank=true)
+
+
     class Meta:
         managed = False
         db_table = 'tbl_gdfplanointernoorcamento'
         verbose_name_plural = 'Plano Interno de Orçamento - GDF'
 
     def __str__ (self):
-        str(self.id_gdfplanointernoorcamento), str(self.pig_creditos)
         return '{} - {}'.format(str(self.pig_cadastrodemanda), str(self.pig_data))
 
     
@@ -604,6 +621,7 @@ class TblIniciativaestrategica(models.Model):
 
 
 class TblItemaquisicaoservico(models.Model):
+   
     id_itemaqusicaoservico = models.AutoField(db_column='Id_ItemAqusicaoServico', primary_key=True)  # Field name made lowercase.
     ias_processoaqusicaoservico = models.ForeignKey('TblProcessoaquisicaoservico', models.DO_NOTHING, db_column='ias_ProcessoAqusicaoServico')  # Field name made lowercase.
     ias_codigo = models.IntegerField(db_column='ias_Codigo', blank=True, null=True)  # Field name made lowercase.
@@ -620,7 +638,7 @@ class TblItemaquisicaoservico(models.Model):
 
     def __str__ (self):
         self.id_itemaqusicaoservico
-        return str(self.ias_processoaqusicaoservico)
+        return '{} - {}'.format(str(self.ias_processoaqusicaoservico), str(self.ias_descricao))
 
 class TblObjetivo(models.Model):
     id_objetivo = models.AutoField(db_column='Id_Objetivo', primary_key=True)  # Field name made lowercase.
@@ -671,8 +689,34 @@ class TblPlanointernoorcamento(models.Model):
 
 
 class TblPrevisaofaseexecucao(models.Model):
-    id_previsaofaseexecucao = models.IntegerField(db_column='Id_PrevisaoFaseExecucao', primary_key=True)  # Field name made lowercase.
-    fse_fase = models.CharField(db_column='fse_Fase', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    DOD = "1"
+    ANALISE = "2"
+    ETP = "3"
+    TR = "4"
+    SELECAO = "5"
+    CONTRATO ="6"
+    EMPENHO = "7"
+    ANDAMENTO = "8"
+    ENTREGA = "9"
+    ATESTO = "10"
+    LIQUIDACAO = "11"
+    PAGAMENTO = "12"
+    ENCERRAMENTO = "13"
+    opcoes = [(DOD, 'Documento de Oficialização de Demanda'),\
+         (ANALISE, 'Analise CSO'),\
+         (ETP, 'Estudo Técnico Preliminar'), \
+         (TR, 'Termo de Referência'),\
+         (SELECAO, 'Seleção do Fornecedor'),\
+         (CONTRATO, 'Assinatura do Contrato'),
+         (EMPENHO, 'Empenho'),\
+         (ANDAMENTO, 'Obra ou Serviço em Andamento'),\
+         (ENTREGA, 'Entrega do Bem ou da Obra'),\
+         (ATESTO, 'Atesto da Nota Fiscal'),\
+         (LIQUIDACAO, 'Liquidacao do Empenho'),
+         (PAGAMENTO, 'Pagamento'),
+         (ENCERRAMENTO, 'Encerramento')]
+    id_previsaofaseexecucao = models.AutoField(db_column='Id_PrevisaoFaseExecucao', primary_key=True)  # Field name made lowercase.
+    fse_fase = models.CharField(db_column='fse_Fase', choices=opcoes, max_length=45, blank=True, null=True)  # Field name made lowercase.
     fse_inicio = models.DateField(db_column='fse_Inicio', blank=True, null=True)  # Field name made lowercase.
     fse_termino = models.DateField(db_column='fse_Termino', blank=True, null=True)  # Field name made lowercase.
     fse_processoaquisicaoservico = models.ForeignKey('TblProcessoaquisicaoservico', models.DO_NOTHING, db_column='fse_ProcessoAquisicaoServico')  # Field name made lowercase.
@@ -680,6 +724,11 @@ class TblPrevisaofaseexecucao(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_previsaofaseexecucao'
+        verbose_name_plural = 'Fase de Aquisicao'
+
+    def __str__ (self):
+        self.id_previsaofaseexecucao
+        return self.fse_fase, self.fse_inicio, self.fse_termino
 
 
 class TblProcessoaquisicaoservico(models.Model):
@@ -739,8 +788,8 @@ class TblStatus (models.Model):
         self.id_status
         return self.sta_descricao
 
-class viw_qddfcdf2(models.Model):
-    id = models.BigIntegerField(primary_key=True)
+class viw_qddfcdf(models.Model):
+    #id = models.BigIntegerField(primary_key=True)
     Emissao = models.DateField(db_column='Emissão')
     Ano = models.TextField(db_column='Ano')
     Ordenador= models.CharField(db_column='Ordenador de Despesa', max_length=36, blank=True, null=True)
@@ -749,7 +798,7 @@ class viw_qddfcdf2(models.Model):
     Fonte = models.CharField (db_column='Fonte', max_length=3, blank=True, null=True)
     Grupo = models.CharField(db_column='Grupo de Despesa', max_length=25, blank=True, null=True)
     Lei = models.DecimalField(db_column='Lei', max_digits=37, decimal_places=2, blank=True, null=True)
-    DotacaoInicial =models.DecimalField(db_column='Dotação Inicial', max_digits=38, decimal_places=2, blank=True, null=True)
+    DotacaoInicial =models.DecimalField(db_column='Dotacao Inicial', max_digits=38, decimal_places=2, blank=True, null=True)
     DotacaoAtual = models.DecimalField(db_column='Dotação Atual', max_digits=38, decimal_places=2, blank=True, null=True)
     Empenhado = models.DecimalField(db_column='Empenhado', max_digits=37, decimal_places=2, blank=True, null=True)
     Liquidado = models.DecimalField(db_column='Liquidado', max_digits=37, decimal_places=2, blank=True, null=True)
@@ -757,7 +806,7 @@ class viw_qddfcdf2(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'viw_qddfcdf2'
+        db_table = 'viw_qddfcdf'
 
 class viw_qddGdf(models.Model):
     id = models.BigIntegerField(primary_key=True)
@@ -776,4 +825,39 @@ class viw_qddGdf(models.Model):
    
     class Meta:
         managed = False
-        db_table = 'viw_qddGdf'        
+        db_table = 'viw_qddGdf'
+
+class viw_gdfplanointerno(models.Model):
+    id = models.BigIntegerField(db_column='id', primary_key=True)
+    viw_codigodemanda = models.IntegerField(db_column= 'viw_CodigoDemanda', verbose_name='Demanda')
+    viw_coordenadorsetorial = models.CharField(db_column= 'viw_CoordenadorSetorial', verbose_name='Coordenador Setorial', max_length=255, db_collation='utf8mb4_general_ci')
+    viw_descricao = models.CharField(db_column='viw_Descricao',verbose_name= 'Descrição', max_length= 1000)
+    viw_grupo = models.TextField(db_column='viw_Grupo', verbose_name='Grupo de Despesa')
+    viw_despesadetalhada = models.IntegerField(db_column='viw_DespesaDetalhada', verbose_name='Despesa Detalhada')
+    viw_previsao = models.DecimalField(db_column='viw_Previsao', verbose_name='Previsão', max_digits=15, decimal_places=2 )
+    viw_empenhado = models.DecimalField(db_column='viw_ValorEmpenhado', verbose_name= 'Empenho', max_digits=15, decimal_places= 2)
+    viw_exercicioempenho = models.TextField(db_column= 'viw_ExercicioEmpenho', verbose_name= 'Exercício do Empenho')
+    viw_pioexercicio = models.TextField(db_column='viw_PioExercicio', verbose_name= 'Exercicio PIO')
+
+    class Meta:
+        managed = False
+        db_table = 'viw_gdfplanointerno'
+        verbose_name_plural = 'Plano Interno de Orçamento - GDF'
+
+class viw_fcdfplanointerno(models.Model):
+    id = models.BigIntegerField(db_column='id', primary_key=True)
+    viw_codigodemanda = models.IntegerField(db_column= 'viw_CodigoDemanda', verbose_name='Demanda')
+    viw_coordenadorsetorial = models.CharField(db_column= 'viw_CoordenadorSetorial', verbose_name='Coordenador Setorial', max_length=255, db_collation='utf8mb4_general_ci')
+    viw_descricao = models.CharField(db_column='viw_Descricao',verbose_name= 'Descrição', max_length= 1000)
+    viw_grupo = models.TextField(db_column='viw_Grupo', verbose_name='Grupo de Despesa')
+    viw_despesadetalhada = models.IntegerField(db_column='viw_DespesaDetalhada', verbose_name='Despesa Detalhada')
+    viw_previsao = models.DecimalField(db_column='viw_Previsao', verbose_name='Previsão', max_digits=15, decimal_places=2 )
+    viw_empenhado = models.DecimalField(db_column='viw_ValorEmpenhado', verbose_name= 'Empenho', max_digits=15, decimal_places= 2)
+    viw_exercicioempenho = models.TextField(db_column= 'viw_ExercicioEmpenho', verbose_name= 'Exercício do Empenho')
+    viw_pioexercicio = models.TextField(db_column='viw_PioExercicio', verbose_name= 'Exercicio PIO')
+
+    class Meta:
+        managed = False
+        db_table = 'viw_fcdfplanointerno'
+        verbose_name_plural = 'Plano Interno de Orçamento - FCDF' 
+

@@ -17,55 +17,9 @@
           Sistema de Orçamento e Finanças
         </h1>
     </div>
-    <nav class="menuHorizontal">
-        <ul class="listaMenu">
-            <li class="itemMenu"><a href="/">Quadro de Detalhamento de Despesa</a></li>
-            <li class="itemMenu"><a href="/cadastro/DPP/">Cadastro de Demandas</a></li>
-            <li class="itemMenu"><a href="/pio/DPP/">Plano Interno de Orçamento</a></li>
-            <li class="itemMenu"><a href="/remanejamento/">Remanejamentos</a></li>
-            <li class="itemMenu"><a href="/acompanhamento/">Acompanhamento</a></li>
-        </ul>
-        <a href="/admin/"><button class="btnMenu">Administração de Dados</button></a>
-    </nav>
-    <nav class="menuVertical">
-        <ul style="list-style-type: none" class="listaMenuVertical">
-            <li class="itemMenuVertical"><a href="/pio/DPP">Fundo Constitucional</a></li>
-            <li class="itemMenuVertical"><a href="/pio/DPGC/">Tesouro Local</a></li>
-        </ul>
-    </nav>
-        <div class="conteiner">
-            <div id="auxTable">
-                <table>
-                    <thead >
-                        <tr>
-                            <th>Plano Orçamentário:</th>
-                            <th>Fonte de Recurso:</th>
-                            <th>Grupo de Despesa:</th>
-                            <th>Lei:</th>
-                            <th>Dotação Inicial:</th>
-                            <th>Dotação Atual:</th>
-                            <th>Empenhado:</th>
-                            <th>Liquidado:</th>
-                            <th>Pago:</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for dbs in db %}
-                        <tr>
-                            <td style = "text-align:left" style = "width: 3px" style = "word-wrap:break-word"> {{dbs.Plano}}</td>
-                            <td > {{dbs.Fonte}}</td>
-                            <td> {{dbs.Grupo}}</td>
-                            <td style = "text-align:right"> {{dbs.Lei | floatformat:2}}</td>
-                            <td style = "text-align:right"> {{dbs.DotacaoInicial | floatformat:2}}</td>
-                            <td style = "text-align:right"> {{dbs.DotacaoAtual | floatformat:2}}</td>
-                            <td style = "text-align:right"> {{dbs.Empenhado | floatformat:2}}</td>
-                            <td style = "text-align:right"> {{dbs.Liquidado | floatformat:2}}</td>
-                            <td style = "text-align:right"> {{dbs.Pago | floatformat:2}}</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-</body>
-</html>
+    <div>
+        <h1>Login:</h1>
+            <p>Usuário: <input type="text" placeholder = 'usuário intranet'></p>
+            <p>Senha: <input type="text" placeholder = 'senha intranet'></p></p>
+            <a href="{% url 'quadroFCDF' %}"><button>Entrar:</button></a>
+    </div>

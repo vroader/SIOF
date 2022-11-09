@@ -1,8 +1,11 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
+#from enumchoicefield import ChoiceEnum, EnumChoiceField
+from django.db import models
+from django.forms import TextInput, Textarea
 from .models import TblCadastrodemandas, TblFcdfempenho,\
      TblFcdfplanointernoorcamento,\
-     TblFcdfremanejamento, TblGdfcreditosorcamentarios,\
+     TblGdfcreditosorcamentarios,\
      TblGdfempenho, TblGdfpiocreditosorcamentarios,\
      TblGdfplanointernoorcamento,\
      TblItemaquisicaoservico,\
@@ -10,6 +13,7 @@ from .models import TblCadastrodemandas, TblFcdfempenho,\
      TblFcdfempenho,\
      TblFcdfitemempenho,\
      TblProcessoaquisicaoservico,\
+     TblPrevisaofaseexecucao,\
      TblGdfitemempenho
 
 # Register your models here.
@@ -30,23 +34,25 @@ class gdfEmpenhoAdmin(admin.ModelAdmin):
 
 admin.site.register(TblGdfempenho, gdfEmpenhoAdmin)
 
-class remanejamentoFcdfAdmin(admin.ModelAdmin):
-    list_display = ('ref_especieremanejamento', 'ref_planointerno')
-
-admin.site.register(TblFcdfremanejamento, remanejamentoFcdfAdmin)
-
 class coordenadoresAdmin (admin.ModelAdmin):
     list_display = ('cso_codigo', 'cso_nome')
     list_filter = ('cso_status__sta_descricao',)
 
 admin.site.register(TblCoordenadoressetoriais, coordenadoresAdmin)
 
+class faseAquisicaoInline(admin.TabularInline):
+    model = TblPrevisaofaseexecucao
 
 class itemAquisicaoInline(admin.TabularInline):
     model = TblItemaquisicaoservico
+    formfield_overrides= {
+        models.CharField: {'widget':TextInput(attrs={'size': '40'})},
+        models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':40})},
+    }
+    #fields  = ['itg_itemaquisicao', ('itg_descricao', 'itg_operacao', 'itg_quantidade', 'itg_valor', 'itg_data')]
     
 class tblProcessoaquisicaoservicoAdmin(admin.ModelAdmin):
-    inlines = [itemAquisicaoInline, ]
+    inlines = [itemAquisicaoInline, faseAquisicaoInline, ]
 
 admin.site.register(TblProcessoaquisicaoservico, tblProcessoaquisicaoservicoAdmin)
 
@@ -69,15 +75,20 @@ class gdfpiocretidosorcamentarios(admin.TabularInline):
     extra=1
 
 class gdfcreditosorcamentariosAdmin(admin.ModelAdmin):
-    inlines= [gdfpiocretidosorcamentarios,]
+    inlines= [gdfpiocretidosorcamentarios, ]
     model= TblGdfcreditosorcamentarios
     extra=1
+    #formfield_overrides: Mapping[Type[Field[Any, Any]], Mapping[str, Any]]
 
 class GdfplanointernoorcamentoAdmin(admin.ModelAdmin):
-    inlines = [gdfpiocretidosorcamentarios,]
-    def get_gdfcreditos(self, obj):
-        return "\n".join([p.id_gdfcreditosorcamentarios for p in obj.TblGdfCreditosorcamentarios.all()])
+    inlines = [gdfpiocretidosorcamentarios, ]
+    class Meta:
+        model = TblGdfplanointernoorcamento
+    #def get_gdfcreditos(self, obj):
+    #    return "\n".join([p.id_gdfcreditosorcamentarios for p in obj.credito.all()])
+    #get_gdfcreditos.short_description = "Creditos"
    
 admin.site.register(TblGdfcreditosorcamentarios, gdfcreditosorcamentariosAdmin)
 admin.site.register(TblGdfplanointernoorcamento, GdfplanointernoorcamentoAdmin)
+admin.site.register(TblGdfpiocreditosorcamentarios)
 

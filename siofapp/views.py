@@ -1,35 +1,35 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from siofapp.models import viw_qddfcdf2, viw_qddGdf, TblGdfquadrodetalhamentodespesa, TblFcdfplanointernoorcamento, TblCadastrodemandas, TblFcdfremanejamento, TblItemaquisicaoservico, TblFcdfitemempenho
+from siofapp.models import viw_gdfplanointerno,viw_fcdfplanointerno, viw_qddfcdf, viw_qddGdf, TblGdfquadrodetalhamentodespesa, TblFcdfplanointernoorcamento, TblCadastrodemandas, TblFcdfremanejamento, TblItemaquisicaoservico, TblFcdfitemempenho
 from django.db.models.aggregates import Avg, Sum
 from django.db.models import Sum
 
 # Create your views here.
 def home(request):
     data = { }
-    data['db'] = viw_qddfcdf2.objects.all().order_by('Ordenador')
+    data['db'] = viw_qddfcdf.objects.all().order_by('Ordenador')
     return render(request, 'index.html', data)
 
 def quadroDetalhamento(request):
-    total = viw_qddfcdf2.objects.filter(Ano=2022).aggregate(lei=Sum('Lei') \
+    total = viw_qddfcdf.objects.filter(Ano=2022).aggregate(lei=Sum('Lei') \
                 , dotacaoInicial=Sum('DotacaoInicial') \
                 , dotacaoAtual=Sum('DotacaoAtual') \
                 , empenhado=Sum('Empenhado') \
                 , liquidado=Sum('Liquidado') \
                 , pago=Sum('Pago'))
-    totalOrdenador = viw_qddfcdf2.objects.filter(Ano=2022).values('Ordenador').annotate(lei=Sum('Lei')\
+    totalOrdenador = viw_qddfcdf.objects.filter(Ano=2022).values('Ordenador').annotate(lei=Sum('Lei')\
                 ,dotacaoInicial=Sum('DotacaoInicial')\
                 ,dotacaoAtual=Sum('DotacaoAtual')\
                 ,empenhado=Sum('Empenhado')\
                 ,liquidado=Sum('Liquidado')\
                 ,pago=Sum('Pago')).order_by('Ordenador')
-    totalOrdenadorFonte = viw_qddfcdf2.objects.filter(Ano=2022).values('Ordenador', 'Fonte' ).annotate(lei=Sum('Lei')\
+    totalOrdenadorFonte = viw_qddfcdf.objects.filter(Ano=2022).values('Ordenador', 'Fonte' ).annotate(lei=Sum('Lei')\
                 ,dotacaoInicial=Sum('DotacaoInicial')\
                 ,dotacaoAtual=Sum('DotacaoAtual')\
                 ,empenhado=Sum('Empenhado')\
                 ,liquidado=Sum('Liquidado')\
                 ,pago=Sum('Pago')).order_by('Ordenador')
-    totalOrdenadorFonteGrupo = viw_qddfcdf2.objects.filter(Ano=2022).values('Ordenador', 'Fonte', 'Grupo' ).annotate(lei=Sum('Lei')\
+    totalOrdenadorFonteGrupo = viw_qddfcdf.objects.filter(Ano=2022).values('Ordenador', 'Fonte', 'Grupo' ).annotate(lei=Sum('Lei')\
                 ,dotacaoInicial=Sum('DotacaoInicial')\
                 ,dotacaoAtual=Sum('DotacaoAtual')\
                 ,empenhado=Sum('Empenhado')\
@@ -66,24 +66,28 @@ def quadroDetalhamentoGDF (request):
                 ,'totalOrdenadorFonteGdf':totalOrdenadorFonteGdf\
                 ,'totalOrdenadorFonteGrupoGdf':totalOrdenadorFonteGrupoGdf})
 
-'''def pioView(request, cso):
-    pioCso = TblFcdfplanointernoorcamento.objects.filter(pif_cadastrodemanda__cad_coordenadorsetorial=cso).filter(pif_exercicio = 2022)
-    pioCsoGrupo = TblFcdfplanointernoorcamento.objects.filter(pif_exercicio = 2022).values('pif_cadastrodemanda__cad_fcdfdespesadetalhada__nfc_grupodespesa').annotate(valor=Sum('pif_valor')
-    pioPessoal = TblFcdfplanointernoorcamento.objects.filter(pif_cadastrodemanda__cad_fcdfdespesadetalhada__nfc_grupodespesa=1).filter(pif_cadastrodemanda__cad_coordenadorsetorial=cso).filter(pif_exercicio = 2022)
-    pioCusteio = TblFcdfplanointernoorcamento.objects.filter(pif_cadastrodemanda__cad_fcdfdespesadetalhada__nfc_grupodespesa=3).filter(pif_cadastrodemanda__cad_coordenadorsetorial=cso).filter(pif_exercicio = 2022)
-    pioInvestimento = TblFcdfplanointernoorcamento.objects.filter(
-        pif_cadastrodemanda__cad_fcdfdespesadetalhada__nfc_grupodespesa=4).filter(
-        pif_cadastrodemanda__cad_coordenadorsetorial=cso).filter(pif_exercicio=2022)
-    somaCso = TblFcdfplanointernoorcamento.objects.filter(pif_cadastrodemanda__cad_coordenadorsetorial=cso).filter(pif_exercicio = 2022).aggregate(Sum('pif_valor'))
-    return render(request, 'planoInterno.html', {'cso':cso, 'pioCso':pioCso, pioCsoGrupo = 'pioCsoGrupo', pioCusteio':pioCusteio, 'pioPessoal':pioPessoal, 'pioInvestimento':pioInvestimento, 'somaCso':somaCso['pif_valor__sum']})'''
+def pioView(request, cso):
+    pioCsoGDF = viw_gdfplanointerno.objects.filter(viw_coordenadorsetorial=cso, viw_pioexercicio = 2022)
+    pioTotalGDF = pioCsoGDF.aggregate(totalPrevisao=Sum('viw_previsao'), totalEmpenhado=Sum('viw_empenhado'))
+    pioGrupoGDF = pioCsoGDF.values('viw_grupo').annotate(previsaoGrupo = Sum('viw_previsao'), empenhoGrupo = Sum('viw_empenhado'))
+    pioCsoFCDF = viw_fcdfplanointerno.objects.filter(viw_coordenadorsetorial=cso, viw_pioexercicio = 2022)
+    pioTotalFCDF = pioCsoFCDF.aggregate(totalPrevisao=Sum('viw_previsao'), totalEmpenhado=Sum('viw_empenhado'))
+    pioGrupoFCDF = pioCsoFCDF.values('viw_grupo').annotate(previsaoGrupo = Sum('viw_previsao'), empenhoGrupo = Sum('viw_empenhado'))
+    totalPrevisao = pioTotalGDF['totalPrevisao'] if pioTotalGDF['totalPrevisao'] != None else 0 + pioTotalFCDF['totalPrevisao'] if pioTotalGDF['totalPrevisao'] != None else 0
+    totalEmpenhado = pioTotalGDF['totalEmpenhado'] if pioTotalGDF['totalEmpenhado'] != None else 0 + pioTotalFCDF['totalEmpenhado'] if pioTotalFCDF['totalEmpenhado'] != None else 0
+    return render(request, 'planoInterno.html', {'cso':cso,\
+     'pioCsoGDF':pioCsoGDF,\
+     'pioTotalGDF': pioTotalGDF,\
+     'pioGrupoGDF': pioGrupoGDF,\
+     'pioCsoFCDF': pioCsoFCDF,\
+     'pioTotalFCDF': pioTotalFCDF,\
+     'pioGrupoFCDF': pioGrupoFCDF,
+     'totalPrevisao': totalPrevisao,
+     'totalEmpenhado': totalEmpenhado})
 
-def cadastroView(request, cso):
+def cadastroView(request,cso):
     cadastroCso = TblCadastrodemandas.objects.filter(cad_coordenadorsetorial__cso_codigo=cso).filter(cad_status=1).order_by('cad_codigodemanda')
     return render(request, 'cadastro.html', {'cso':cso, 'cadastroCso':cadastroCso})
-
-def remanejamentoView(request):
-    remanejamento = TblFcdfremanejamento.objects.all()
-    return render(request, 'remanejamento.html', {'remanejamento': remanejamento})
 
 def acompanhamentoView(request):
     acompanhamento = TblItemaquisicaoservico.objects.select_related('itf_itemaquisicaoservico')

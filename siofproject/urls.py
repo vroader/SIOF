@@ -15,18 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from siofapp.views import home #, pioView, cadastroView, remanejamentoView, acompanhamentoView
+from siofapp.views import home, pioView, quadroDetalhamento, quadroDetalhamentoGDF #cadastroView, remanejamentoView, acompanhamentoView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
-  
-    #
+    path('', home),   
     #path('cadastro/<str:cso>/', cadastroView, name='cadastro'),
     #path('remanejamento/', remanejamentoView, name='remanejamento'),
     #path('acompanhamento/', acompanhamentoView, name='acompanhamento'),
     #path('quadro', quadroDetalhamento, name='quadro'),
-    #path('quadro', quadroDetalhamentoGDF, name='quadroGDF'),
-    path('quadro/', include("siofapp.siofapp_urls")),
-    path('pio/', include("siofapp.siofapp_urls")),
+    path('quadroFCDF/', quadroDetalhamento, name='quadroFCDF'),
+    path('quadroGDF/', quadroDetalhamentoGDF, name='quadroGDF'),    
+    path('pio/<str:cso>/', pioView, name='planoInterno')
 ]
